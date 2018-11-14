@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7755ff48-967e-428e-ac74-2af7a28f08f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceRegister/ServerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceRegister/ServerRegister.java" afterDir="false" />
-    </list>
+    <list default="true" id="7755ff48-967e-428e-ac74-2af7a28f08f9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="36" />
+          <entry key="java" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="36" />
+          <entry key="JAVA" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -62,14 +59,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Operator.java">
+        <entry file="file://$PROJECT_DIR$/src/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-              <folding>
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#225#226#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="322">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -87,7 +80,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/serviceRegister/ServerRegister.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/business/serviceRegister/ServerRegister.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -133,6 +126,7 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <hideEmptyPackages ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -142,11 +136,6 @@
             <path>
               <item name="sensor" type="58d84e3e:PackageViewProjectNode" />
               <item name="sensor" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="sensor" type="58d84e3e:PackageViewProjectNode" />
-              <item name="sensor" type="616d4139:PackageViewModuleNode" />
-              <item name="serviceRegister" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="sensor" type="58d84e3e:PackageViewProjectNode" />
@@ -173,7 +162,29 @@
               <item name="sensor" type="b2602c69:ProjectViewProjectNode" />
               <item name="sensor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
               <item name="serviceRegister" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -184,7 +195,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542194690031" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542194910151" />
     <property name="last_opened_file_path" value="D:/Libraries/postgresql-42.2.5.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -224,16 +235,15 @@
       <option name="presentableId" value="Default" />
       <updated>1542082661090</updated>
       <workItem from="1542082666380" duration="22180000" />
-      <workItem from="1542182324324" duration="12021000" />
+      <workItem from="1542182324324" duration="12351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34201000" />
+    <option name="totallyTimeSpent" value="34531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -261,7 +271,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" sideWeight="0.15033557" weight="0.3295302" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="9" sideWeight="0.30738255" visible="true" weight="0.16308725" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="9" sideWeight="0.30738255" visible="true" weight="0.3" />
       <window_info anchor="right" id="Structure" order="10" sideWeight="0.6926175" side_tool="true" weight="0.16308725" />
     </layout>
   </component>
@@ -288,7 +298,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/entities/Counter.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/entities/Counter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
@@ -315,7 +325,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/entities/AudioBufferSample.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/entities/AudioBufferSample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-322">
           <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
@@ -326,7 +336,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/entities/AudioSectionData.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/entities/AudioSectionData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
@@ -349,14 +359,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/Service.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/entities/Buffer.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/entities/Buffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
@@ -373,7 +383,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/MicrophoneService.java">
+    <entry file="file://$PROJECT_DIR$/src/business/services/MicrophoneService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
@@ -384,14 +394,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/serviceRegister/ServerRegister.java">
+    <entry file="file://$PROJECT_DIR$/src/business/serviceRegister/ServerRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="206" column="45" lean-forward="true" selection-start-line="206" selection-start-column="45" selection-end-line="206" selection-end-column="45" />
@@ -417,7 +420,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/serviceRegister/ServiceRegisterEntry.java">
+    <entry file="file://$PROJECT_DIR$/src/business/serviceRegister/ServiceRegisterEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
           <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
@@ -443,6 +446,13 @@
             <element signature="e#186#187#0" expanded="true" />
             <element signature="e#225#226#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

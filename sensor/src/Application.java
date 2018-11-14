@@ -1,4 +1,4 @@
-import business.serviceRegister.ServerRegister;
+import business.services.serviceRegister.ServerRegister;
 
 public class Application
 {

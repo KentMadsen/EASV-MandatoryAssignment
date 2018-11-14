@@ -1,4 +1,4 @@
-package business.serviceRegister;
+package business.services.serviceRegister;
 
 import business.services.Service;
 
