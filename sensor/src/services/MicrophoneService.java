@@ -1,48 +1,5 @@
 package services;
 
-import services.obj.AudioMetaData;
-import services.obj.AudioSample;
-
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.DataLine;
-import javax.sound.sampled.TargetDataLine;
-
-public class MicrophoneService
-        extends Service
-{
-    public MicrophoneService()
-    {
-
-    }
-/*
-    private TargetDataLine line = null;
-    private boolean Continue = true;
-
-
-    /**
-     *
-     */
-/*
-    @Override
-    public final void start()
-    {
-
-    }
-
-    /**
-     *
-     */
-/*
-    @Override
-    public final void stop()
-    {
-
-    }
-
-    /**
-     *
-     */
 /*
     @Override
     public void asynch() throws Exception
@@ -50,7 +7,7 @@ public class MicrophoneService
         int iteration = 0;
         byte[] tempbuffer = new byte[96000];
 
-        AudioMetaData currentMeta = new AudioMetaData();
+        AudioSectionData currentMeta = new AudioSectionData();
 
         while ( Continue )
         {
@@ -79,8 +36,8 @@ public class MicrophoneService
                 if( n > 0 )
                 {
                     //
-                    if( currentMeta.msBeginEmpty() )
-                        currentMeta.setBegin();
+                    if( currentMeta.getDurationEmpty() )
+                        currentMeta.setDuration();
 
                     // Reset Counter
                     if( iteration == 1023 )
@@ -91,7 +48,7 @@ public class MicrophoneService
 
                     //
                     iteration = iteration + 1;
-                    AudioSample sample = new AudioSample( iteration,
+                    AudioBufferSample sample = new AudioBufferSample( iteration,
                                                           tempbuffer,
                                                           currentMeta );
 
@@ -99,8 +56,8 @@ public class MicrophoneService
                     if( !currentMeta.msNextEmpty() )
                     {
                         //
-                        AudioMetaData newMeta = new AudioMetaData();
-                        newMeta.setMsBegin( currentMeta.getMsBegin() );
+                        AudioSectionData newMeta = new AudioSectionData();
+                        newMeta.setDuration( currentMeta.getDuration() );
 
                         // Exchange
                         currentMeta = newMeta;
@@ -151,4 +108,65 @@ public class MicrophoneService
         Continue = aContinue;
     }
     */
+
+import services.entities.Buffer;
+
+/**
+ *
+ */
+public class MicrophoneService
+        extends Service
+{
+    //
+    /**
+     *
+     */
+    public MicrophoneService()
+    {
+
+    }
+
+    //
+    private Buffer buffer = null;
+    private boolean Continue = true;
+
+    /**
+     *
+     */
+    @Override
+    public void execute()
+    {
+
+    }
+
+    // Accessor
+    public final boolean isContinue()
+    {
+        return Continue;
+    }
+
+    public final void setBuffer(Buffer buffer)
+    {
+        this.buffer = buffer;
+    }
+
+    public final Buffer getBuffer()
+    {
+        return buffer;
+    }
+
+    public final void setContinue(boolean aContinue)
+    {
+        Continue = aContinue;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public final String toString()
+    {
+        return super.toString();
+    }
 }

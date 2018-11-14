@@ -1,10 +1,11 @@
-package services.obj;
+package services.entities;
 
 /**
  *
  */
 public class Counter
 {
+    // Constructor
     /**
      *
      */
@@ -22,6 +23,25 @@ public class Counter
         this.setValue( Value );
     }
 
+    // Variables
+        // Global
+    /**
+     *
+     */
+    private final static int one = 1;
+
+    /**
+     *
+     */
+    private final static int zero = 0;
+
+    /**
+     *
+     */
+    private int value = 0;
+
+
+    // Functions
     /**
      *
      * @param i
@@ -31,7 +51,6 @@ public class Counter
         this.setValue( this.predictIncrease( i ) );
     }
 
-
     /**
      *
      * @param i
@@ -40,7 +59,6 @@ public class Counter
     {
         this.setValue( this.predictDecrease( i ));
     }
-
 
     /**
      *
@@ -67,12 +85,13 @@ public class Counter
         return this.getValue() == point;
     }
 
+    // : Protected
     /**
      *
      * @param size
      * @return
      */
-    public int predictIncrease( int size )
+    protected int predictIncrease( int size )
     {
         return ( this.getValue() + size );
     }
@@ -82,28 +101,12 @@ public class Counter
      * @param size
      * @return
      */
-    public int predictDecrease( int size )
+    protected int predictDecrease( int size )
     {
         return ( this.getValue() - size );
     }
 
-    // Variables
-    /**
-     *
-     */
-    private final int one = 1;
-
-    /**
-     *
-     */
-    private final int zero = 0;
-
-    /**
-     *
-     */
-    private int value = 0;
-
-
+    // Accessors
     /**
      *
      * @return
@@ -122,6 +125,7 @@ public class Counter
         this.value = value;
     }
 
+    // Object Implementation
     /**
      *
      * @return

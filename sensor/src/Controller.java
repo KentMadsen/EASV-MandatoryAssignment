@@ -1,14 +1,45 @@
+import services.MicrophoneService;
+
+/**
+ *
+ */
 public class Controller
 {
-    private boolean Continue = false;
-
-    public void execute()
+    // Constructors
+    /**
+     *
+     */
+    public Controller()
     {
 
     }
 
-    // Accessors
+    /**
+     *
+     * @param state
+     */
+    public Controller( boolean state )
+    {
+        this.setContinue( state );
+    }
 
+    // Variables
+    /**
+     *
+     */
+    private boolean Continue = true;
+
+    // Function
+    /**
+     *
+     */
+    public void execute()
+    {
+
+
+    }
+
+    // Accessors
     /**
      *
      * @return
@@ -25,5 +56,16 @@ public class Controller
     public final void setContinue( boolean aContinue )
     {
         Continue = aContinue;
+    }
+
+    // Object Implementation
+    /**
+     *
+     * @return
+     */
+    @Override
+    public final String toString()
+    {
+        return super.toString();
     }
 }
