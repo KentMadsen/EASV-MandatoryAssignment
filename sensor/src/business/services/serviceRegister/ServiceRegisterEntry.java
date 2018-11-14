@@ -12,8 +12,9 @@ public class ServiceRegisterEntry
      *
      */
     public ServiceRegisterEntry()
+            throws Exception
     {
-
+        this(null );
     }
 
     /**
@@ -21,31 +22,46 @@ public class ServiceRegisterEntry
      * @param v
      */
     public ServiceRegisterEntry( Service v )
+            throws Exception
     {
         this( v, true );
     }
 
     /**
      *
-     * @param v
-     * @param lock
+     * @param serviceEntryElement
+     * @param locked
      */
-    public ServiceRegisterEntry(Service v, boolean lock)
+    public ServiceRegisterEntry( Service serviceEntryElement,
+                                 boolean locked )
+            throws Exception
     {
-        this.setKey( v );
-        this.setLocked( lock );
+        this.setKey( serviceEntryElement );
+        this.setLocked( locked );
     }
 
     // Variables
-    private Service key = null;
+        //
+    private final static String vKey         = "KEY";
+    private final static String vLock        = "LOCKED";
+    private final static String vSplit       = ":";
+    private final static String vObjectString = "OBJECT";
+    private final static String vNext = "\r\n";
+
+    private final static String vFalse = "FALSE";
+    private final static String vTrue = "TRUE";
+
+        //
+    private Service key    = null;
     private boolean locked = false;
+
 
     // Accessor
     /**
      *
      * @return
      */
-    public Service getKey()
+    public final Service getKey()
     {
         return this.key;
     }
@@ -53,9 +69,14 @@ public class ServiceRegisterEntry
     /**
      *
      * @param key
+     * @throws Exception
      */
-    public void setKey( Service key )
+    public final void setKey( Service key )
+            throws Exception
     {
+        if( this.isLocked() )
+            throw new Exception();
+
         this.key = key;
     }
 
@@ -84,6 +105,35 @@ public class ServiceRegisterEntry
     @Override
     public final String toString()
     {
-        return super.toString();
+        StringBuilder builder = new StringBuilder();
+
+        // Key
+        builder.append( vKey );
+        builder.append( vSplit );
+
+        if( this.getKey() == null )
+            builder.append("Null");
+        else
+            builder.append( this.getKey().toString() );
+
+        builder.append( vNext );
+
+        // Lock
+        builder.append( vLock );
+        builder.append( vSplit );
+
+        if( this.isLocked() )
+            builder.append( vTrue );
+        else
+            builder.append( vFalse );
+
+        builder.append( vNext );
+
+        //
+        builder.append( vObjectString );
+        builder.append( vSplit );
+        builder.append( super.toString() );
+
+        return builder.toString();
     }
 }

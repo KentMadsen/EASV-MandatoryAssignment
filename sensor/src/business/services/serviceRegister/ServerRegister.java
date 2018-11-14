@@ -20,6 +20,26 @@ public class ServerRegister
 
     }
 
+    public static void test()
+    {
+        try
+        {
+            ServiceRegisterEntry[] a = ArrayGenerate(200);
+
+            for( ServiceRegisterEntry c : a )
+            {
+                System.out.println( c.toString() );
+                System.out.println("\r\n");
+            }
+        }
+        catch ( Exception ex )
+        {
+            System.out.println(
+                    ex.toString()
+            );
+        }
+    }
+
     // Variables
     private ServiceRegisterEntry[] services = null;
 
@@ -32,10 +52,10 @@ public class ServerRegister
 
     private static final ServiceRegisterEntry sre_state_empty = null;
 
-    private static final int one = 1;
+    private static final int one    = 1;
+    private static final int zero   = 0;
 
     // Functions
-
         // Add
     /**
      *
@@ -128,7 +148,8 @@ public class ServerRegister
     public final ServiceRegisterEntry[] toArrayEntries()
     {
         //
-        ServiceRegisterEntry[] entries = new ServiceRegisterEntry[this.services.length];
+        ServiceRegisterEntry[] entries = new ServiceRegisterEntry[ this.services.length ];
+
 
 
 
@@ -203,6 +224,7 @@ public class ServerRegister
      * @return
      */
     protected static ServiceRegisterEntry ArrayGenerate()
+            throws Exception
     {
         return new ServiceRegisterEntry(null,
                                         false );
@@ -214,6 +236,7 @@ public class ServerRegister
      * @return
      */
     protected static ServiceRegisterEntry ArrayGenerate( Service service )
+            throws Exception
     {
         return
                 new ServiceRegisterEntry( service );
@@ -242,7 +265,35 @@ public class ServerRegister
         return (x + y);
     }
 
+    /**
+     *
+     * @param size
+     * @return
+     */
+    protected static ServiceRegisterEntry[] ArrayGenerate( int size )
+        throws Exception
+    {
+        //
+        if( size == 0 )
+            throw new ArrayIndexOutOfBoundsException();
 
+        //
+        ServiceRegisterEntry[] generatedArray = new ServiceRegisterEntry[size];
+
+        // Loop
+        for( int index = 0;
+                 index < generatedArray.length;
+                 index = increment( index ) )
+        {
+            // Insert Empty Fields
+            ArrayAppendEntryTo( generatedArray,
+                                ArrayGenerate(),
+                                index );
+            //
+        }
+
+        return generatedArray;
+    }
 
     /**
      *
@@ -258,19 +309,19 @@ public class ServerRegister
             throw new SizeLimitExceededException();
 
         // loops both arrays, given the assumption that @to is bigger than @from
-        for( int x = 0;
-                 x < Integer.min( from.length,
-                                  to.length );
-                 x = increment( x ) )
+        for( int index = zero;
+                 index < Integer.min( from.length,
+                                      to.length );
+                 index = increment( index ) )
         {
             //
             ServiceRegisterEntry fromEntry = ArraySelectEntrySecuredFrom( from,
-                                                                          x );
+                                                                          index );
 
             //
             ArrayAppendEntryToSecured( to,
                                        fromEntry,
-                                       x );
+                                       index );
         }
 
     }
@@ -295,7 +346,7 @@ public class ServerRegister
 
         // Retrieve Entry
         return ArraySelectEntryFrom( entries,
-                                  index_position );
+                                     index_position );
     }
 
     /**
@@ -325,10 +376,42 @@ public class ServerRegister
      * @param index_position
      * @return
      */
+    protected static boolean ArrayIsElementEmptyAtSecured( ServiceRegisterEntry[] entries,
+                                                           int index_position )
+    {
+        if( ArrayIsEntryAllowed( entries, index_position ) )
+            throw new ArrayIndexOutOfBoundsException();
+
+        return ArrayIsElementEmptyAt( entries, index_position );
+    }
+
+
+    /**
+     *
+     * @param entries
+     * @param index_position
+     * @return
+     */
     protected static boolean ArrayIsElementEmptyAt( ServiceRegisterEntry[] entries,
                                                     int index_position )
     {
-        return ( entries[index_position] == null );
+        return ( entries[ index_position ] == sre_state_empty );
+    }
+
+    /**
+     *
+     * @param entries
+     * @param index_position
+     * @return
+     */
+    protected static boolean ArrayIsElementWritebleSecuredAt( ServiceRegisterEntry[] entries,
+                                                              int index_position )
+    {
+        if( ArrayIsEntryAllowed( entries, index_position ) )
+            throw new Exception();
+
+        return ArrayIsElementWritebleAt( entries,
+                                         index_position );
     }
 
     /**
@@ -340,7 +423,7 @@ public class ServerRegister
     protected static boolean ArrayIsElementWritebleAt( ServiceRegisterEntry[] entries,
                                                        int index_position )
     {
-        return ( ArrayNot( entries[index_position].isLocked() ) );
+        return ( ArrayNot( entries[ index_position ].isLocked() ) );
     }
 
     /**
@@ -352,17 +435,17 @@ public class ServerRegister
     protected static boolean ArrayIsElementLockedAt( ServiceRegisterEntry[] entries,
                                                      int index_position )
     {
-        return ( entries[index_position].isLocked() );
+        return ( entries[ index_position ].isLocked() );
     }
 
     /**
      *
-     * @param b
+     * @param state
      * @return
      */
-    protected static boolean ArrayNot(boolean b)
+    protected static boolean ArrayNot( boolean statee )
     {
-        return !b;
+        return !state;
     }
 
     /**
@@ -414,7 +497,7 @@ public class ServerRegister
      */
     protected static void ArrayAppendEntryTo( ServiceRegisterEntry[] entries,
                                               ServiceRegisterEntry append_entry,
-                                              int index_position)
+                                              int index_position )
     {
         entries[ index_position ] = append_entry;
     }

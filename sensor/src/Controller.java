@@ -23,10 +23,14 @@ public class Controller
     }
 
     // Variables
+        // Global
+    private static final boolean default_continue = true;
+
+        // FileSystem
     /**
      *
      */
-    private boolean Continue = true;
+    private boolean Continue = default_continue;
 
     // Function
     /**

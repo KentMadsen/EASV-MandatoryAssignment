@@ -1,13 +1,20 @@
-$font-stack: helvetica, sans-serif;
+$font-stack: helvetica, 
+             sans-serif;
 
-// color scheme - Active
-$primary-color: red;
-$secondary-color: blue;
-$tertiary-color: green;
+// Passive Components / Panels
+$secondary-color-light: #5472d3;
+$secondary-color-dark: #002171;
+
+// Active Components / buttons, etc.
+$tertiary-color-light: #00b248 ;
+$tertiary-color-dark:#66ffa6;
 
 // color scheme - Passive
-$background-color: #eeeeee;
-$highlight-color: #eeeeee;
+$background-color: #212121;
+
+// color scheme - font
+$primary-color: #ffffff;
+
 
 // Body
 
@@ -15,4 +22,19 @@ body
 {
     font: 100% $font-stack;
     
+}
+
+.center
+{
+    margin: auto;
+    margin-top:30px;
+    
+    width: 1282px;
+    height: 722px;
+}
+
+#dashboard
+{
+    margin:auto;
+    border:2px solid black;
 }

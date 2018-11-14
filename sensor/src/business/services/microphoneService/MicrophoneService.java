@@ -1,4 +1,4 @@
-package business.services;
+package business.services.microphoneService;
 
 /*
     @Override
@@ -109,13 +109,16 @@ package business.services;
     }
     */
 
+import business.services.Service;
 import business.services.entities.Buffer;
+import persistence.panel.PipelineOut;
 
 /**
  *
  */
 public class MicrophoneService
         extends Service
+            implements PipelineOut<Buffer>
 {
     //
     /**
@@ -123,13 +126,45 @@ public class MicrophoneService
      */
     public MicrophoneService()
     {
-
+        this.setBufferSize( default_size );
     }
 
-    //
-    private Buffer buffer = null;
+    // Variable
+        //
+    /**
+     *
+     */
+    private Buffer buffer    = null;
+
+    /**
+     *
+     */
     private boolean Continue = true;
 
+    /**
+     *
+     */
+    private int bufferSize = 0;
+
+        // Global
+    private static final int buffer_size_level_1  = 8000;
+    private static final int buffer_size_level_2  = 11025;
+    private static final int buffer_size_level_3  = 16000;
+    private static final int buffer_size_level_4  = 22050;
+    private static final int buffer_size_level_5  = 32000;
+    private static final int buffer_size_level_6  = 44100;
+    private static final int buffer_size_level_7  = 48000;
+    private static final int buffer_size_level_8  = 88200;
+    private static final int buffer_size_level_9  = 96000;
+    private static final int buffer_size_level_10 = 176400;
+    private static final int buffer_size_level_11 = 192000;
+    private static final int buffer_size_level_12 = 352800;
+    private static final int buffer_size_level_13 = 384000;
+
+    private static int default_size = buffer_size_level_6;
+
+
+    // Implemented Interface
     /**
      *
      */
@@ -140,26 +175,61 @@ public class MicrophoneService
     }
 
     // Accessor
+    /**
+     *
+     * @return
+     */
     public final boolean isContinue()
     {
-        return Continue;
+        return this.Continue;
     }
 
-    public final void setBuffer(Buffer buffer)
+    /**
+     *
+     * @param buffer
+     */
+    public final void setBuffer( Buffer buffer )
     {
         this.buffer = buffer;
     }
 
+    /**
+     *
+     * @return
+     */
     public final Buffer getBuffer()
     {
-        return buffer;
+        return this.buffer;
     }
 
-    public final void setContinue(boolean aContinue)
+    /**
+     *
+     * @param aContinue
+     */
+    public final void setContinue( boolean aContinue )
     {
-        Continue = aContinue;
+        this.Continue = aContinue;
     }
 
+    /**
+     *
+     * @return
+     */
+    public final int getBufferSize()
+    {
+        return this.bufferSize;
+    }
+
+    /**
+     *
+     * @param bufferSize
+     */
+    public final void setBufferSize( int bufferSize )
+    {
+        this.bufferSize = bufferSize;
+    }
+
+    // Object implementation
     /**
      *
      * @return

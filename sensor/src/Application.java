@@ -20,7 +20,6 @@ public class Application
         //
     private final static boolean default_Continue_state = true;
 
-        // Local
     private Controller controller = new Controller( default_Continue_state );
 
     // Functions
@@ -52,6 +51,7 @@ public class Application
     {
         ServerRegister register = new ServerRegister();
 
+        ServerRegister.test();
     }
 
     // Object Implementation
