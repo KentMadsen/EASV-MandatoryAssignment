@@ -1,4 +1,4 @@
-package services;
+package business.services;
 
 /*
     @Override
@@ -109,7 +109,7 @@ package services;
     }
     */
 
-import services.entities.Buffer;
+import business.services.entities.Buffer;
 
 /**
  *

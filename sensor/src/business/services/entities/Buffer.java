@@ -1,4 +1,4 @@
-package services.entities;
+package business.services.entities;
 
 /**
  *

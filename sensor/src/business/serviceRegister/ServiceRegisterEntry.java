@@ -1,6 +1,6 @@
-package serviceRegister;
+package business.serviceRegister;
 
-import services.Service;
+import business.services.Service;
 
 /**
  *
