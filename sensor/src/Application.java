@@ -1,3 +1,5 @@
+import serviceRegister.ServerRegister;
+
 public class Application
 {
     // Entry
@@ -35,8 +37,7 @@ public class Application
      */
     public final void execute()
     {
-        while ( controller.isContinue() )
-            controller.execute();
+        test();
     }
 
     /**
@@ -44,6 +45,12 @@ public class Application
      */
     public final void deInitialise()
     {
+
+    }
+
+    public void test()
+    {
+        ServerRegister register = new ServerRegister();
 
     }
 
