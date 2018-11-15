@@ -266,7 +266,6 @@ class Vector
     // Not sure ?
     calculateUnitVector()
     {
-      // x_e = (x)/|v| and y_e = (y)/|v|
       var newVector = GenerateVector( basic_divide( this.x, 
                                                     this.distance() ),
 
@@ -276,7 +275,6 @@ class Vector
       return newVector;
     }
 
-    //
     projectAgaintsUnitVector( unitVector )
     {
       var newVector = GenerateVector( basic_multiply( unitVector.x, 
@@ -288,13 +286,11 @@ class Vector
       return newVector;
     }
 
-    //
     powerOf2( parameterX )
     {
       return Math.pow( parameterX, two );
     }
 
-    //
     distance()
     {
         return Math.sqrt( ( this.powerOf2( this.x ) + this.powerOf2( this.y ) ) );
@@ -349,9 +345,6 @@ class Frame
 
 
 // Tag: Entity
-/**
- *
- */
 class Entity
 {
     constructor()
@@ -366,9 +359,6 @@ class Entity
 
 
 // Tag: Object
-/**
- *
- */
 class Object
   extends Entity
 {
