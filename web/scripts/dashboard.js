@@ -456,32 +456,10 @@ class ParticleSystem
 
   };
 
-  //
-  debug()
-  {
-    for( var i = 0;
-             i < this.particles.length;
-             i++ )
-    {
-      //
-      var current = this.particles[i];
-
-      //
-      var actual_position = GeneratePoint( this.originPoint.getX() + current.x,
-                                           this.originPoint.getY() + current.y );
-
-      //
-      illustrate_point( actual_position,
-                        GenerateVector(8, 1),
-                        'red',
-                        'white' );
-    }
-  };
-
   // next 'Frame'
   update()
   {
-    this.sequence.increase( 1 );
+    
 
 
   };
@@ -513,10 +491,11 @@ class CameraField
   }
 
     // Default Generic Object
-  function GenerateEmptyVector()
-  {
-    return GenerateVector( 0, 0 );
-  }
+function GenerateEmptyVector()
+{
+  return GenerateVector( zero, 
+                         zero );
+}
 
   // Choose parameters
 function GeneratePoint( pX, pY )
@@ -527,7 +506,8 @@ function GeneratePoint( pX, pY )
   // Default Generic Object
 function GenerateEmptyPoint()
 {
-  return GeneratePoint( 0, 0 );
+  return GeneratePoint( zero, 
+                        zero );
 }
 
 
@@ -547,13 +527,16 @@ const nine  = 9;
 const d2 = '2d';
 const d3 = '3d';
 
+const default_wait = 25;
+
 const debug_system = true;
 
     // Tag: Global
-var canvas_id = null;
-var context   = null;
+var canvas_document = null;
+var canvas_context   = null;
 
 var Continue = true;
+var wait_for_next_frame = default_wait;
 
 var start_screen_pos  = GeneratePoint( 0, 0 );
 var canvas_size       = GenerateVector( 1280, 720 );
@@ -572,77 +555,50 @@ function inverse_y_axis_along_canvas( y_position )
   return rv;
 }
 
+// to be deleted
+/*
 function line( point_begin,
                point_end )
 {
-    context.beginPath();
+    canvas_context.beginPath();
 
-    context.moveTo( point_begin.x,
+    canvas_context.moveTo( point_begin.x,
                     inverse_y_axis_along_canvas( point_begin.y ) );
 
-    context.lineTo( point_end.x,
+    canvas_context.lineTo( point_end.x,
                     inverse_y_axis_along_canvas( point_end.y ) );
 
-    context.stroke();
-}
+    canvas_context.stroke();
+} */
+// to be deleted
 
 // Parameters: SP (Start Point), V: Vector (size and direction)
 function clearScreenAt( SP, V )
 {
     var toPoint = V.addition( SP.x, SP.y );
 
-    context.clearRect( SP.x, SP.y,
+    canvas_context.clearRect( SP.x, SP.y,
                        toPoint.x, toPoint.y);
 }
-
-
-// P: p.x, p.y, center point, inside x, y coordinate system
-// V: v.x = radius, v.y = width
-function illustrate_point( p,
-                           v,
-                           fillcolor,
-                           strokecolor )
-{
-  // Skip, if debugging is off
-  if( debug_system == false )
-    return;
-
-  //
-  context.beginPath();
-
-  context.arc( p.x, inverse_y_axis_along_canvas( p.y ),
-               v.x,
-               0, (2 * Math.PI) );
-
-  context.fillStyle = fillcolor;
-  context.fill();
-
-  context.lineWidth = v.y;
-  context.strokeStyle = strokecolor;
-
-// Draw
-  context.stroke();
-}
-
 
 // Tag: Business Logic
         // Configuration
 function configure()
 {
+  // Setup Canvas Document
     configure_stage();
 
 
 }
 
-            // setup required components
+// setup required components
 function configure_stage()
 {
-    canvas_id = document.getElementById( canvas_id_name );
-    context = canvas_id.getContext( d2 );
+    canvas_document = document.getElementById( canvas_id_name );
+    canvas_context  = canvas_document.getContext( d2 );
 }
 
 // Phrases
-
     //
 function analyze()
 {
@@ -740,14 +696,19 @@ function next()
         update();
 
         //
-        window.requestAnimationFrame( draw );
+        setTimeout( request,
+                    wait_for_next_frame );
     }
+}
+
+function request()
+{
+    window.requestAnimationFrame( draw );
 }
 
 // Tag: Update Model
 function update()
 {
-  ps_test.update();
 
 
 }
