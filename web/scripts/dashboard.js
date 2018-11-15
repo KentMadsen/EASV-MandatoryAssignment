@@ -562,22 +562,6 @@ function inverse_y_axis_along_canvas( y_position )
   return rv;
 }
 
-// to be deleted
-/*
-function line( point_begin,
-               point_end )
-{
-    canvas_context.beginPath();
-
-    canvas_context.moveTo( point_begin.x,
-                    inverse_y_axis_along_canvas( point_begin.y ) );
-
-    canvas_context.lineTo( point_end.x,
-                    inverse_y_axis_along_canvas( point_end.y ) );
-
-    canvas_context.stroke();
-} */
-// to be deleted
 
 // Parameters: SP (Start Point), V: Vector (size and direction)
 function clearScreenAt( SP, V )
@@ -606,45 +590,32 @@ function configure_stage()
 }
 
 // Phrases
-    //
 function analyze()
 {
 
 }
 
-    //
 function map()
 {
 
 }
 
-    //
 function representation()
 {
 
 }
 
-    // final stage:
 function present()
 {
 
 }
 
 // Program Structure
-
-// Internal Business Logic Phrase
+  // Internal Business Logic Phrase
 function prepare()
 {
-  prepare_test();
+  
 }
-
-
-function prepare_test()
-{
-
-
-
-};
 
 // Tag: Initialise Screen
 function init()
@@ -662,21 +633,15 @@ function init()
 // Tag: Update Screen
 function draw()
 {
+  // resets canvas display
   clear();
 
-  //
   analyze();
-
-  //
   map();
-
-  // Outline
   representation();
-
-  // Draw
   present();
 
-  //
+  // request next frame
   next();
 }
 
@@ -686,6 +651,7 @@ function clear()
   // Clean current Canvas
   clearScreen();
 }
+
 
 function clearScreen()
 {
