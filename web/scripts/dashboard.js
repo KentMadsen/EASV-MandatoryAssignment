@@ -1,5 +1,6 @@
 /* 
     Name : Kent v. Madsen
+
 */
 
 // Tag: Basic calculation functions
@@ -391,9 +392,6 @@ class Effect
 };
 
 // Tag: Interactive
-/*
- *
- */
 class Interactive
     extends Entity
 {
@@ -418,6 +416,8 @@ class ParticleSystem
       this.particles           = new Array();
       
       this.sequence            = new Counter();
+      
+      this.sequence_end        = 500;
   };
 
   setOrigin( x, y )
@@ -676,13 +676,8 @@ function prepare()
 
 function prepare_test()
 {
-  ps_test = new ParticleSystem();
-  ps_test.generate();
   
 
-  var c = new Circle();
-
-  console.log(c);
 
 };
 
