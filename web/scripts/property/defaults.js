@@ -4,8 +4,11 @@
     Source Code Author : Kent Madsen
     Copyright 2018 Kent v Madsen
 */
+
+// Tag: 
 const default_wait = 25;
 
+// Tag: Numbers
 const zero  = 0;
 const one   = 1;
 const two   = 2;
@@ -17,3 +20,6 @@ const seven = 7;
 const eight = 8;
 const nine  = 9;
   
+// Tag: Global Static Variables
+const d2 = '2d';
+const d3 = '3d';
