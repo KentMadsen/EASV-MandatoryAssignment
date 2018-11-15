@@ -32,3 +32,17 @@ class Point
     this.positionY = value;
   }
 }
+
+//
+function GeneratePoint( parameterX, 
+                        parameterY )
+{
+  return new Point( parameterX, 
+                    parameterY );
+}
+
+function GenerateEmptyPoint()
+{
+  return GeneratePoint( zero, 
+                        zero );
+}

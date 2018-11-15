@@ -98,3 +98,16 @@ class Vector
         return Math.sqrt( ( this.powerOf2( this.x ) + this.powerOf2( this.y ) ) );
     }
 }
+
+// 
+function GenerateVector( parameterX, parameterY )
+{
+  return new Vector( parameterX,
+                     parameterY );
+}
+
+function GenerateEmptyVector()
+{
+  return GenerateVector( zero, 
+                         zero );
+}
