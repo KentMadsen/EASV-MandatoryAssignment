@@ -1,233 +1,46 @@
 // Mandatory Assignment
 // Dashboard
 
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
 // Class Definitions
 function basic_substract( a, b )
 {
   return a - b;
 }
 
-function basic_addition(a, b)
+function basic_addition( a, b )
 {
   return a + b;
 }
 
-class Vector
+function basic_multiply( a, b )
 {
-    //
-    constructor( pX, pY )
-    {
-        this.x = pX;
-        this.y = pY;
-    }
-
-    // Accessors
-    getX()
-    {
-      return this.x;
-    }
-
-    setX( value )
-    {
-      this.x = value;
-    }
-
-    getY()
-    {
-      return this.y;
-    }
-
-    setY( value )
-    {
-      this.y = value;
-    }    
-
-    // Function
-      // Works
-    substract( px, py )
-    {
-        var newVector = GenerateVector( basic_substract( this.x, px ),
-                                        basic_substract( this.y, py ) );
-        return newVector;
-    }
-
-    // Works
-    addition( px, py )
-    {
-        var newVector = GenerateVector( basic_addition( this.x, px ),
-                                        basic_addition( this.y, py ) );
-        return newVector;
-    }
-
-    // Works
-    scaleByScalar( s )
-    {
-        var newVector = GenerateVector( ( s * this.x ),
-                                        ( s * this.y ) );
-        return newVector;
-    }
-
-    // Not sure ?
-    unitVector()
-    {
-      // x_e = (x)/|v| and y_e = (y)/|v|
-      var newVector = GenerateVector( ( this.x / this.distance() ),
-                                      ( this.y / this.distance() ) );
-      return newVector;
-    }
-
-    projectAgaintsUnitVector( v )
-    {
-      var newVector = GenerateVector( ( v.x * this.distance() ),
-                                      ( v.y * this.distance() ) );
-
-      return newVector;
-    }
-
-    // |v(->)| = distance.
-    // Calculates the currents vectors, distance or length
-    distance()
-    {
-        // x^2
-        var x_result = Math.pow( this.x, two );
-
-        // y^2
-        var y_result = Math.pow( this.y, two );
-
-        // x_result + y_result
-        var combined = ( x_result + y_result );
-
-        // sqrt(x^2 + y^2) = |v^(->)|
-        return Math.sqrt( combined );
-    }
+  return a * b;
 }
 
-// Generators
-  // Set Parameters
-function GenerateVector( pX, pY )
+function basic_divide( a, b )
 {
-  return new Vector( pX, pY );
+  return a / b;
 }
 
-  // Default Generic Object
-function GenEmptyVector()
-{
-  return GenerateVector( 0, 0 );
-}
-
-// Vector Coordinate
-class Point
-{
-  //
-    constructor( pX, pY )
-    {
-        this.x = pX;
-        this.y = pY;
-    }
-
-    //
-    getX()
-    {
-      return this.x;
-    }
-
-    setX( value )
-    {
-      this.x = value;
-    }
-
-    //
-    getY()
-    {
-      return this.y;
-    }
-
-    setY( value )
-    {
-      this.y = value;
-    }
-
-}
-
-  // Choose parameters
-function GeneratePoint( pX, pY )
-{
-  return new Point( pX, pY );
-}
-
-  // Default Generic Object
-function GenerateEmptyPoint()
-{
-  return GeneratePoint( 0, 0 );
-}
-
-/*
-*/
-class Entity
-{
-    constructor()
-    {
-      this.originPoint = GenEmptyVector();
-
-    };
-
-
-
-};
-
-/*
- *
- */
-class Actor
-    extends Entity
-{
-    constructor()
-    {
-      super();
-
-    };
-
-};
-
-class Object
-  extends Entity
-{
-  constructor()
-  {
-    super();
-
-  };
-
-
-};
-
-/*
- *
- */
-class Effect
-    extends Entity
-{
-    constructor()
-    {
-      super();
-      //
-    };
-
-
-
-};
-
+// Convertion of Degrees or Radians
+// Source
 function toRadians( degrees )
 {
-    return degrees * Math.PI/180;
+    return ( degrees * ( Math.PI / 180 ) );
 }
 
 function toDegress( radians )
 {
-  return radians * 180/Math.PI;
+  return ( radians * ( 180 / Math.PI ) );
 }
 
 
+//
 class VectorParameterFunction
 {
   constructor()
@@ -282,8 +95,15 @@ Circle.prototype.apply_y =
   return this.pos.getY() + this.r * Math.sin( toRadians( i ) );
 }
 
+
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+// Tag: Entities
 class Counter
 {
+  // Init
   constructor()
   {
     this.value = 0;
@@ -291,6 +111,7 @@ class Counter
     this.default_distance = 1;
   }
 
+  // Functions
   reset()
   {
     this.setValue( 0 );
@@ -316,6 +137,7 @@ class Counter
     this.decrease( this.default_distance );
   };
 
+  // Accessor
   setValue( i )
   {
     this.value = i;
@@ -328,6 +150,137 @@ class Counter
   
 }
 
+// Vector Coordinate
+class Point
+{
+  //
+    constructor( pX, pY )
+    {
+        this.x = pX;
+        this.y = pY;
+    }
+
+    //
+    getX()
+    {
+      return this.x;
+    }
+
+    setX( value )
+    {
+      this.x = value;
+    }
+
+    //
+    getY()
+    {
+      return this.y;
+    }
+
+    setY( value )
+    {
+      this.y = value;
+    }
+
+}
+
+class Vector
+{
+    //
+    constructor( pX, pY )
+    {
+        this.x = pX;
+        this.y = pY;
+    }
+
+    // Accessors
+    getX()
+    {
+      return this.x;
+    }
+
+    setX( value )
+    {
+      this.x = value;
+    }
+
+    getY()
+    {
+      return this.y;
+    }
+
+    setY( value )
+    {
+      this.y = value;
+    }    
+
+    // Function
+      // Works
+    substract( px, py )
+    {
+        var nv = GenerateVector( basic_substract( this.x, px ),
+                                 basic_substract( this.y, py ) );
+
+        return nv;
+    }
+
+    // Works
+    addition( px, py )
+    {
+        var nv = GenerateVector( basic_addition( this.x, px ),
+                                 basic_addition( this.y, py ) );
+
+        return nv;
+    }
+
+    // Works
+    scaleByScalar( s )
+    {
+        var nv = GenerateVector( basic_multiply( s, this.x ),
+                                 basic_multiply( s, this.y ) );
+
+        return nv;
+    }
+
+    // Not sure ?
+    unitVector()
+    {
+      // x_e = (x)/|v| and y_e = (y)/|v|
+      var nv = GenerateVector( basic_divide( this.x, this.distance() ),
+                               basic_divide( this.y, this.distance() ) );
+
+      return nv;
+    }
+
+    //
+    projectAgaintsUnitVector( v )
+    {
+      var nv = GenerateVector( basic_multiply( v.x, this.distance() ),
+                               basic_multiply( v.y, this.distance() ) );
+
+
+      return nv;
+    }
+
+    // |v(->)| = distance.
+    // Calculates the currents vectors, distance or length
+    distance()
+    {
+        // x^2
+        var x_result = Math.pow( this.x, two );
+
+        // y^2
+        var y_result = Math.pow( this.y, two );
+
+        // x_result + y_result
+        var combined = ( x_result + y_result );
+
+        // sqrt(x^2 + y^2) = |v^(->)|
+        return Math.sqrt( combined );
+    }
+}
+
+//
 class Particle 
   extends Point
 {
@@ -335,12 +288,114 @@ class Particle
   {
       super();
 
-      this.dv = GenerateEmptyPoint();
+      this.dv = GenerateEmptyVector();
   }
 
 }
 
+
 //
+class Model
+{
+  constructor()
+  {
+    this.originPoint = GenerateEmptyVector();
+
+
+  };
+
+}
+
+class Container
+{
+  constructor()
+  {
+
+  };
+}
+
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+/**
+ * 
+ */
+class Entity
+{
+    constructor()
+    {
+      this.originPoint = GenerateEmptyVector();
+
+    };
+
+
+
+};
+
+
+/**
+ * 
+ */
+class Object
+  extends Entity
+{
+  constructor()
+  {
+    super();
+
+  };
+
+
+};
+
+/*
+ *
+ */
+class Actor
+    extends Entity
+{
+    constructor()
+    {
+      super();
+
+    };
+
+};
+
+
+/*
+ *
+ */
+class Effect
+    extends Entity
+{
+    constructor()
+    {
+      super();
+      //
+    };
+
+
+
+};
+
+/*
+ *
+ */
+class Interactive
+    extends Entity
+{
+    constructor()
+    {
+      super();
+      //
+    };
+
+};
+
+
+// Tag: Systems
 class ParticleSystem 
   extends Effect
 {
@@ -382,12 +437,9 @@ class ParticleSystem
              i < ps; 
              i ++ )
     {
+      var s = new Particle();
       
-      
-      this.append();
-      
-      
-
+      this.append( s );
     }
     
   };
@@ -397,14 +449,16 @@ class ParticleSystem
   {
     for( var i = 0; 
              i < this.particles.length; 
-             i++)
+             i++ )
     {
       //
       var current = this.particles[i];
 
+      //
       var actual_position = GeneratePoint( this.originPoint.getX() + current.x, 
                                            this.originPoint.getY() + current.y );
 
+      //
       illustrate_point( actual_position, 
                         GenerateVector(8, 1), 
                         'red', 
@@ -425,40 +479,6 @@ class ParticleSystem
 /*
  *
  */
-class Interactive
-    extends Entity
-{
-    constructor()
-    {
-      super();
-      //
-    };
-
-};
-
-//
-class Model
-{
-  constructor()
-  {
-    this.originPoint = GenEmptyVector();
-
-
-  };
-
-}
-
-class Container
-{
-  constructor()
-  {
-
-  };
-}
-
-/*
- *
- */
 class CameraField
     extends Actor
 {
@@ -471,6 +491,40 @@ class CameraField
 
 };
 
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+// Generators
+  // Set Parameters
+  function GenerateVector( pX, pY )
+  {
+    return new Vector( pX, pY );
+  }
+  
+    // Default Generic Object
+  function GenerateEmptyVector()
+  {
+    return GenerateVector( 0, 0 );
+  }
+
+  // Choose parameters
+function GeneratePoint( pX, pY )
+{
+  return new Point( pX, pY );
+}
+
+  // Default Generic Object
+function GenerateEmptyPoint()
+{
+  return GeneratePoint( 0, 0 );
+}
+
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
 // Tag: Variables
     // Application Variables
 var canvas_id = null;
@@ -479,22 +533,25 @@ var context = null;
 var Continue = true;
 
 //
-var start_screen_pos = new Point(0, 0);
+var start_screen_pos  = GeneratePoint(0, 0);
 
 // Properties
-var canvas_size = new Vector( 1280, 720 );
+var canvas_size       = GenerateVector( 1280, 720 );
+
+
 var canvas_id_name = 'dashboard';
 
 // Static Globals
 const two = 2;
+
 const dimension = '2d';
 
 const debug_system = true;
 
-var cameras = new CameraField(1);
-var camera_index = 0;
 
-//
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 // Tag: context functions
 // Draw on Context: Base Functions
@@ -505,13 +562,18 @@ function line( point_begin,
     context.beginPath();
 
     context.moveTo( point_begin.x,
-                    inverse_y_axis_along_canvas(point_begin.y) );
+                    inverse_y_axis_along_canvas( point_begin.y ) );
 
     context.lineTo( point_end.x,
-                    inverse_y_axis_along_canvas(point_end.y) );
+                    inverse_y_axis_along_canvas( point_end.y ) );
 
     context.stroke();
 }
+
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 // P: p.x, p.y, center point, inside x, y coordinate system
 // V: v.x = radius, v.y = width
@@ -541,7 +603,7 @@ function illustrate_point( p,
   context.stroke();
 }
 
-///////////////////////////////////////////////////////
+
 function inverse_y_axis_along_canvas( y_position )
 {
   // canvas_height - y = ( y+ )
@@ -565,6 +627,11 @@ function clearScreen()
     clearScreenAt( start_screen_pos,
                    canvas_size )
 }
+
+
+/* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 // Program Logic
         // Configuration
