@@ -1,16 +1,27 @@
 // Mandatory Assignment
 // Dashboard
-  // Class Definitions
+
+// Class Definitions
+function basic_substract( a, b )
+{
+  return a - b;
+}
+
+function basic_addition(a, b)
+{
+  return a + b;
+}
+
 class Vector
 {
     //
-    constructor( vX, vY )
+    constructor( pX, pY )
     {
-        this.x = vX;
-        this.y = vY;
+        this.x = pX;
+        this.y = pY;
     }
 
-//
+    // Accessors
     getX()
     {
       return this.x;
@@ -21,7 +32,6 @@ class Vector
       this.x = value;
     }
 
-//
     getY()
     {
       return this.y;
@@ -30,21 +40,22 @@ class Vector
     setY( value )
     {
       this.y = value;
-    }
+    }    
 
-    // Works
+    // Function
+      // Works
     substract( px, py )
     {
-        var newVector = GenerateVector( ( this.x - px ),
-                                ( this.y - py ) );
+        var newVector = GenerateVector( basic_substract( this.x, px ),
+                                        basic_substract( this.y, py ) );
         return newVector;
     }
 
     // Works
     addition( px, py )
     {
-        var newVector = GenerateVector( ( this.x + px ),
-                                ( this.y + py ) );
+        var newVector = GenerateVector( basic_addition( this.x, px ),
+                                        basic_addition( this.y, py ) );
         return newVector;
     }
 
@@ -52,7 +63,7 @@ class Vector
     scaleByScalar( s )
     {
         var newVector = GenerateVector( ( s * this.x ),
-                                ( s * this.y ) );
+                                        ( s * this.y ) );
         return newVector;
     }
 
@@ -61,34 +72,16 @@ class Vector
     {
       // x_e = (x)/|v| and y_e = (y)/|v|
       var newVector = GenerateVector( ( this.x / this.distance() ),
-                              ( this.y / this.distance() ) );
+                                      ( this.y / this.distance() ) );
       return newVector;
     }
 
-    // NotSure
-    /*scalarVector(v)
-    {
-
-          var newVector = GenVec( ( this.x + px ),
-                                  ( this.y + py ) );
-          return newVector;
-    }
-    */
-
-    //
     projectAgaintsUnitVector( v )
     {
       var newVector = GenerateVector( ( v.x * this.distance() ),
-                              ( v.y * this.distance() ) );
+                                      ( v.y * this.distance() ) );
 
       return newVector;
-    }
-
-    // Works
-    pow2( value )
-    {
-        return Math.pow( value,
-                         two );
     }
 
     // |v(->)| = distance.
@@ -96,13 +89,13 @@ class Vector
     distance()
     {
         // x^2
-        var x_result = this.pow2( this.x );
+        var x_result = Math.pow( this.x, two );
 
         // y^2
-        var y_result = this.pow2( this.y );
+        var y_result = Math.pow( this.y, two );
 
         // x_result + y_result
-        var combined = (x_result + y_result);
+        var combined = ( x_result + y_result );
 
         // sqrt(x^2 + y^2) = |v^(->)|
         return Math.sqrt( combined );
@@ -300,42 +293,42 @@ class Counter
 
   reset()
   {
-    this.setValue(0);
-  }
+    this.setValue( 0 );
+  };
 
   increase( i )
   {
     this.setValue( this.getValue() + i )
-  }
+  };
 
   increment()
   {
     this.increase( this.default_distance );
-  }
+  };
 
   decrease( i )
   {
     this.setValue( this.getValue() - i )
-  }
+  };
 
   decrement()
   {
     this.decrease( this.default_distance );
-  }
+  };
 
   setValue( i )
   {
     this.value = i;
-  }
+  };
 
   getValue()
   {
     return this.value;
-  }
+  };
   
 }
 
-class particle 
+class Particle 
   extends Point
 {
   constructor()
@@ -364,7 +357,7 @@ class ParticleSystem
 
   setOrigin( x, y )
   {
-    this.originPoint = GeneratePoint(x, y);
+    this.originPoint = GeneratePoint( x, y );
   }
 
   // amount of given entries, over a specific distance
@@ -390,7 +383,9 @@ class ParticleSystem
              i ++ )
     {
       
+      
       this.append();
+      
       
 
     }
@@ -420,7 +415,7 @@ class ParticleSystem
   // next 'Frame'
   update()
   {
-    Counter.increase(1);
+    this.sequence.increase( 1 );
     
 
   };
