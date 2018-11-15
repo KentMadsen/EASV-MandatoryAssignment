@@ -6,28 +6,28 @@
 */
 
 // Tag: Basic calculation functions
-function basic_substract( a, b )
+function basicSubstract( a, b )
 {
   return ( a - b );
 }
 
-function basic_addition( a, b )
+function basicAddition( a, b )
 {
   return ( a + b );
 }
 
-function basic_multiply( a, b )
+function basicMultiply( a, b )
 {
   return ( a * b );
 }
 
-function basic_divide( a, b )
+function basicDivide( a, b )
 {
   return ( a / b );
 }
 
 // Tag: Convertion functions, Degrees or Radians
-// Source: 
+    /* Source: (url:'https://www.w3resource.com/javascript-exercises/javascript-math-exercise-33.php') */
 function toRadians( degrees )
 {
     return ( degrees * ( Math.PI / 180 ) );
@@ -47,12 +47,12 @@ class VectorParameterFunction
     this.centerPosition = GenerateEmptyPoint();
   }
 
-  apply_x( valueI )
+  applyX( valueI )
   {
     return -1;
   }
 
-  apply_y( valueI )
+  applyY( valueI )
   {
     return -1;
   }
@@ -82,13 +82,13 @@ class Circle
 
 }
 
-Circle.prototype.apply_x =
+Circle.prototype.applyX =
   function( degrees )
 {
   return this.centerPosition.getPositionX() + this.radius * Math.cos( toRadians( degrees ) );
 }
 
-Circle.prototype.apply_y =
+Circle.prototype.applyY =
   function( degrees )
 {
   return this.centerPosition.getPositionY() + this.radius * Math.sin( toRadians( degrees ) );
@@ -97,7 +97,7 @@ Circle.prototype.apply_y =
 // Tag: Entities
 class Counter
 {
-  // Init
+  
   constructor()
   {
     this.value = 0;
@@ -169,7 +169,7 @@ class Counter
 // Tag: Vector Points
 class Point
 {
-  //
+  
   constructor( parameterX, 
                parameterY )
   {
@@ -202,7 +202,7 @@ class Point
 // Tag: Vector
 class Vector
 {
-    //
+  
     constructor( parameterX,
                  parameterY )
     {
@@ -235,8 +235,8 @@ class Vector
     substract( parameterX, 
                parameterY )
     {
-        var newVector = GenerateVector( basic_substract( this.x, parameterX ),
-                                        basic_substract( this.y, parameterY ) );
+        var newVector = GenerateVector( basicSubstract( this.x, parameterX ),
+                                        basicSubstract( this.y, parameterY ) );
 
         return newVector;
     }
@@ -244,9 +244,9 @@ class Vector
     addition( parameterX, 
               parameterY )
     {
-        var newVector = GenerateVector( basic_addition( this.x, 
+        var newVector = GenerateVector( basicAddition( this.x, 
                                                         parameterX ),
-                                        basic_addition( this.y, 
+                                        basicAddition( this.y, 
                                                         parameterY ) );
 
         return newVector;
@@ -254,10 +254,10 @@ class Vector
 
     scaleByScalar( scalarValue )
     {
-        var newVector = GenerateVector( basic_multiply( scalarValue, 
+        var newVector = GenerateVector( basicMultiply( scalarValue, 
                                                         this.x ),
 
-                                        basic_multiply( scalarValue, 
+                                        basicMultiply( scalarValue, 
                                                         this.y ) );
 
         return newVector;
@@ -266,10 +266,10 @@ class Vector
     // Not sure ?
     calculateUnitVector()
     {
-      var newVector = GenerateVector( basic_divide( this.x, 
+      var newVector = GenerateVector( basicDivide( this.x, 
                                                     this.distance() ),
 
-                                      basic_divide( this.y, 
+                                      basicDivide( this.y, 
                                                     this.distance() ) );
 
       return newVector;
@@ -277,9 +277,9 @@ class Vector
 
     projectAgaintsUnitVector( unitVector )
     {
-      var newVector = GenerateVector( basic_multiply( unitVector.x, 
+      var newVector = GenerateVector( basicMultiply( unitVector.x, 
                                                       this.distance() ),
-                                      basic_multiply( unitVector.y, 
+                                      basicMultiply( unitVector.y, 
                                                       this.distance() ) 
       );
 
@@ -541,7 +541,7 @@ var canvas_document_identity = 'dashboard';
 // Tag: context draw functions
 function inverse_y_axis_along_canvas( parameterYPosition )
 {
-  var rotateYAxisOnCanvas = basic_substract( canvas_size.y,
+  var rotateYAxisOnCanvas = basicSubstract( canvas_size.y,
                                              parameterYPosition );
 
   return rotateYAxisOnCanvas;
