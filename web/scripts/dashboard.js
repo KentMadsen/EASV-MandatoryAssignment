@@ -383,9 +383,6 @@ class Object
 
 
 // Tag: Actor
-/*
- *
- */
 class Actor
     extends Entity
 {
