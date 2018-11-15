@@ -540,36 +540,35 @@ const debug_system = true;
 
     // Tag: Global
 var canvas_document = null;
-var canvas_context   = null;
+var canvas_context  = null;
 
 var Continue = true;
+
 var wait_for_next_frame = default_wait;
 
 var start_screen_pos  = GeneratePoint( 0, 0 );
 var canvas_size       = GenerateVector( 1280, 720 );
 
-var canvas_id_name = 'dashboard';
+var canvas_document_identity = 'dashboard';
 
-var ps_test;
 
 // Tag: context draw functions
-  // Inverse function, for the y axis in canvas.
-function inverse_y_axis_along_canvas( y_position )
+function inverse_y_axis_along_canvas( parameterYPosition )
 {
-  var rv = basic_substract( canvas_size.y,
-                            y_position );
+  var rotateYAxisOnCanvas = basic_substract( canvas_size.y,
+                                             parameterYPosition );
 
-  return rv;
+  return rotateYAxisOnCanvas;
 }
 
-
-// Parameters: SP (Start Point), V: Vector (size and direction)
-function clearScreenAt( SP, V )
+function clearScreenAt( parameterStartPoint, 
+                        parameterLength )
 {
-    var toPoint = V.addition( SP.x, SP.y );
+    var toPoint = parameterLength.addition( parameterStartPoint.x, 
+                                            parameterStartPoint.y );
 
-    canvas_context.clearRect( SP.x, SP.y,
-                       toPoint.x, toPoint.y);
+    canvas_context.clearRect( parameterStartPoint.x, parameterStartPoint.y,
+                              toPoint.x, toPoint.y);
 }
 
 // Tag: Business Logic
@@ -585,7 +584,7 @@ function configure()
 // setup required components
 function configure_stage()
 {
-    canvas_document = document.getElementById( canvas_id_name );
+    canvas_document = document.getElementById( canvas_document_identity );
     canvas_context  = canvas_document.getContext( d2 );
 }
 
