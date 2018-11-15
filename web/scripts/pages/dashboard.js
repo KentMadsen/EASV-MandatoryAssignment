@@ -5,52 +5,6 @@
     Copyright 2018 Kent v Madsen
 */
 
-// Tag: Convertion functions, Degrees or Radians
-    /* Source: (url:'https://www.w3resource.com/javascript-exercises/javascript-math-exercise-33.php') */
-function toRadians( degrees )
-{
-    return ( degrees * ( Math.PI / 180 ) );
-}
-
-function toDegress( radians )
-{
-  return ( radians * ( 180 / Math.PI ) );
-}
-
-// Tag: Vector Functions
-class VectorParameterFunction
-{
-  constructor()
-  {
-    this.centerPosition = GenerateEmptyPoint();
-  }
-
-  applyX( valueI )
-  {
-    return -1;
-  }
-
-  applyY( valueI )
-  {
-    return -1;
-  }
-
-}
-
-
-// Tag: Particle Unit
-class Particle
-  extends Point
-{
-  constructor()
-  {
-      super();
-
-      this.dv = GenerateEmptyVector();
-  }
-
-}
-
 // Tag: Object Buffer Types
   	// Tag: Model
 class Model
