@@ -1,4 +1,9 @@
-
+/*
+    Header
+    Name : Kent v. Madsen
+    Source Code Author : Kent Madsen
+    Copyright 2018 Kent v Madsen
+*/
 
 // Tag: Vector Points
 class Point
@@ -31,4 +36,18 @@ class Point
   {
     this.positionY = value;
   }
+}
+
+//
+function GeneratePoint( parameterX, 
+                        parameterY )
+{
+  return new Point( parameterX, 
+                    parameterY );
+}
+
+function GenerateEmptyPoint()
+{
+  return GeneratePoint( zero, 
+                        zero );
 }

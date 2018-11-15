@@ -5,35 +5,6 @@
     Copyright 2018 Kent v Madsen
 */
 
-// Tag: Generator Functions
-  // Generators
-function GenerateVector( parameterX, parameterY )
-{
-  return new Vector( parameterX,
-                     parameterY );
-}
-
-function GeneratePoint( parameterX, 
-                        parameterY )
-{
-  return new Point( parameterX, 
-                    parameterY );
-}
-
-// Generates vectors or points at 0, 0
-function GenerateEmptyVector()
-{
-  return GenerateVector( zero, 
-                         zero );
-}
-
-function GenerateEmptyPoint()
-{
-  return GeneratePoint( zero, 
-                        zero );
-}
-
-
 // Tag: System Variables
     // Tag: Global
 var canvas_document = null;
