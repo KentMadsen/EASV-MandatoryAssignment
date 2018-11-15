@@ -1,4 +1,4 @@
-# Component: Web
+# Component: Sensor
 
 # Footer
 Copyright 2018, 
