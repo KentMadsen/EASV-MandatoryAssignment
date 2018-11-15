@@ -1,0 +1,10 @@
+
+# sass files
+*.css
+*.map
+
+# intelliJ
+*.iml
+*.xml
+
+*.class

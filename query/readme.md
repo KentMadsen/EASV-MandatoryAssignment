@@ -1,4 +1,5 @@
-# Component: Web
+# Component: Query
+
 
 # Footer
 Copyright 2018, 
