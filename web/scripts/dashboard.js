@@ -8,27 +8,26 @@
 // Tag: Basic calculation functions
 function basic_substract( a, b )
 {
-  return (a - b);
+  return ( a - b );
 }
 
 function basic_addition( a, b )
 {
-  return (a + b);
+  return ( a + b );
 }
 
 function basic_multiply( a, b )
 {
-  return (a * b);
+  return ( a * b );
 }
 
 function basic_divide( a, b )
 {
-  return (a / b);
+  return ( a / b );
 }
 
-// Tag: Convertion, Degrees or Radians
-// Convertion of Degrees or Radians
-// Source
+// Tag: Convertion functions, Degrees or Radians
+// Source: 
 function toRadians( degrees )
 {
     return ( degrees * ( Math.PI / 180 ) );
@@ -39,24 +38,21 @@ function toDegress( radians )
   return ( radians * ( 180 / Math.PI ) );
 }
 
-
 // Tag: Vector Functions
 class VectorParameterFunction
 {
   //
   constructor()
   {
-    this.pos = GenerateEmptyPoint();
+    this.centerPosition = GenerateEmptyPoint();
   }
 
-  // get x pos
-  apply_x( i )
+  apply_x( valueI )
   {
     return -1;
   }
 
-  // get y pos
-  apply_y( i )
+  apply_y( valueI )
   {
     return -1;
   }
@@ -87,15 +83,15 @@ class Circle
 }
 
 Circle.prototype.apply_x =
-  function( i )
+  function( degrees )
 {
-  return this.pos.getPositionX() + this.r * Math.cos( toRadians( i ) );
+  return this.centerPosition.getPositionX() + this.radius * Math.cos( toRadians( degrees ) );
 }
 
 Circle.prototype.apply_y =
-  function( i )
+  function( degrees )
 {
-  return this.pos.getPositionY() + this.r * Math.sin( toRadians( i ) );
+  return this.centerPosition.getPositionY() + this.radius * Math.sin( toRadians( degrees ) );
 }
 
 // Tag: Entities
@@ -106,18 +102,14 @@ class Counter
   {
     this.value = 0;
 
+    this.default_position = 0;
     this.default_distance = 1;
   }
 
   // Functions
   reset()
   {
-    this.setValue( 0 );
-  };
-
-  increase( i )
-  {
-    this.setValue( this.getValue() + i )
+    this.setValue( this.default_position );
   };
 
   increment()
@@ -125,9 +117,9 @@ class Counter
     this.increase( this.default_distance );
   };
 
-  decrease( i )
+  increase( size )
   {
-    this.setValue( this.getValue() - i )
+    this.setValue( this.getValue() + size )
   };
 
   decrement()
@@ -135,15 +127,41 @@ class Counter
     this.decrease( this.default_distance );
   };
 
-  // Accessor
-  setValue( i )
+
+  decrease( size )
   {
-    this.value = i;
+    this.setValue( this.getValue() - size )
+  };
+
+  // Accessor methods
+  setValue( position )
+  {
+    this.value = position;
   };
 
   getValue()
   {
     return this.value;
+  };
+
+  getDefaultPosition()
+  {
+    return this.default_position;
+  };
+
+  setDefaultPosition( parameterDefaultStartPosition )
+  {
+    this.default_position = parameterDefaultStartPosition;
+  };
+
+  getDefaultDistance()
+  {
+    return this.default_distance;
+  };
+
+  setDefaultDistance( parameterDefaultDistance )
+  {
+    this.default_distance = parameterDefaultDistance;
   };
 
 }
