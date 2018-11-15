@@ -1,27 +1,29 @@
-/* 
+/*
+    Header
     Name : Kent v. Madsen
-
+    Source Code Author : Kent Madsen
+    Copyright 2018 Kent v Madsen
 */
 
 // Tag: Basic calculation functions
 function basic_substract( a, b )
 {
-  return a - b;
+  return (a - b);
 }
 
 function basic_addition( a, b )
 {
-  return a + b;
+  return (a + b);
 }
 
 function basic_multiply( a, b )
 {
-  return a * b;
+  return (a * b);
 }
 
 function basic_divide( a, b )
 {
-  return a / b;
+  return (a / b);
 }
 
 // Tag: Convertion, Degrees or Radians
@@ -62,14 +64,14 @@ class VectorParameterFunction
 }
 
 // Tag: Circle class
-class Circle 
+class Circle
   extends VectorParameterFunction
 {
   constructor()
   {
     super();
 
-    this.radius = 1; 
+    this.radius = 1;
   }
 
   getRadius()
@@ -84,13 +86,13 @@ class Circle
 
 }
 
-Circle.prototype.apply_x = 
+Circle.prototype.apply_x =
   function( i )
 {
   return this.pos.getX() + this.r * Math.cos( toRadians( i ) );
 }
 
-Circle.prototype.apply_y = 
+Circle.prototype.apply_y =
   function( i )
 {
   return this.pos.getY() + this.r * Math.sin( toRadians( i ) );
@@ -143,7 +145,7 @@ class Counter
   {
     return this.value;
   };
-  
+
 }
 
 // Tag: Vector Points
@@ -209,7 +211,7 @@ class Vector
     setY( value )
     {
       this.y = value;
-    }    
+    }
 
     // Function
       // Works
@@ -278,7 +280,7 @@ class Vector
 }
 
 // Tag: Particle Unit
-class Particle 
+class Particle
   extends Point
 {
   constructor()
@@ -326,7 +328,7 @@ class Frame
 
 // Tag: Entity
 /**
- * 
+ *
  */
 class Entity
 {
@@ -343,7 +345,7 @@ class Entity
 
 // Tag: Object
 /**
- * 
+ *
  */
 class Object
   extends Entity
@@ -404,7 +406,7 @@ class Interactive
 };
 
 // Tag: Systems
-class ParticleSystem 
+class ParticleSystem
   extends Effect
 {
   //
@@ -414,9 +416,9 @@ class ParticleSystem
 
       this.number_of_particles = 256;
       this.particles           = new Array();
-      
+
       this.sequence            = new Counter();
-      
+
       this.sequence_end        = 500;
   };
 
@@ -443,35 +445,35 @@ class ParticleSystem
     var ps = this.number_of_particles;
 
     //
-    for( var i = 0; 
-             i < ps; 
+    for( var i = 0;
+             i < ps;
              i ++ )
     {
       var s = new Particle();
-      
+
       this.append( s );
     }
-    
+
   };
 
   //
   debug()
   {
-    for( var i = 0; 
-             i < this.particles.length; 
+    for( var i = 0;
+             i < this.particles.length;
              i++ )
     {
       //
       var current = this.particles[i];
 
       //
-      var actual_position = GeneratePoint( this.originPoint.getX() + current.x, 
+      var actual_position = GeneratePoint( this.originPoint.getX() + current.x,
                                            this.originPoint.getY() + current.y );
 
       //
-      illustrate_point( actual_position, 
-                        GenerateVector(8, 1), 
-                        'red', 
+      illustrate_point( actual_position,
+                        GenerateVector(8, 1),
+                        'red',
                         'white' );
     }
   };
@@ -480,7 +482,7 @@ class ParticleSystem
   update()
   {
     this.sequence.increase( 1 );
-    
+
 
   };
 
@@ -509,7 +511,7 @@ class CameraField
   {
     return new Vector( pX, pY );
   }
-  
+
     // Default Generic Object
   function GenerateEmptyVector()
   {
@@ -564,7 +566,7 @@ var ps_test;
   // Inverse function, for the y axis in canvas.
 function inverse_y_axis_along_canvas( y_position )
 {
-  var rv = basic_substract( canvas_size.y, 
+  var rv = basic_substract( canvas_size.y,
                             y_position );
 
   return rv;
@@ -596,9 +598,9 @@ function clearScreenAt( SP, V )
 
 // P: p.x, p.y, center point, inside x, y coordinate system
 // V: v.x = radius, v.y = width
-function illustrate_point( p, 
-                           v, 
-                           fillcolor, 
+function illustrate_point( p,
+                           v,
+                           fillcolor,
                            strokecolor )
 {
   // Skip, if debugging is off
@@ -676,7 +678,7 @@ function prepare()
 
 function prepare_test()
 {
-  
+
 
 
 };
