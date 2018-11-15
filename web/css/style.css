@@ -1,0 +1,17 @@
+body {
+  font: 100% helvetica, sans-serif;
+}
+
+.center {
+  margin: auto;
+  margin-top: 30px;
+  width: 1282px;
+  height: 722px;
+}
+
+#dashboard {
+  margin: auto;
+  border: 2px solid black;
+}
+
+/*# sourceMappingURL=style.css.map */
