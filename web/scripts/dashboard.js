@@ -491,22 +491,13 @@ class CameraField
 };
 
 // Tag: Generator Functions
-// Generators
-  // Set Parameters
+  // Generators
 function GenerateVector( parameterX, parameterY )
 {
   return new Vector( parameterX,
                      parameterY );
 }
 
-    // Default Generic Object
-function GenerateEmptyVector()
-{
-  return GenerateVector( zero, 
-                         zero );
-}
-
-  // Choose parameters
 function GeneratePoint( parameterX, 
                         parameterY )
 {
@@ -514,7 +505,13 @@ function GeneratePoint( parameterX,
                     parameterY );
 }
 
-  // Default Generic Object
+// Generates vectors or points at 0, 0
+function GenerateEmptyVector()
+{
+  return GenerateVector( zero, 
+                         zero );
+}
+
 function GenerateEmptyPoint()
 {
   return GeneratePoint( zero, 
