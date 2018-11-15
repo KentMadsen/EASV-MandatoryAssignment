@@ -41,7 +41,6 @@ function toDegress( radians )
 // Tag: Vector Functions
 class VectorParameterFunction
 {
-  //
   constructor()
   {
     this.centerPosition = GenerateEmptyPoint();
