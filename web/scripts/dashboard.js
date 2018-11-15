@@ -1,5 +1,5 @@
 /*
-    Header
+    Header : Dashboard.js
     Name : Kent v. Madsen
     Source Code Author : Kent Madsen
     Copyright 2018 Kent v Madsen
@@ -399,9 +399,6 @@ class Actor
 
 
 // Tag: Effect
-/*
- *
- */
 class Effect
     extends Entity
 {
@@ -444,54 +441,38 @@ class ParticleSystem
       this.sequence_end        = 500;
   };
 
-  setOrigin( x, y )
+  setOrigin( parameterPositionX, 
+             parameterPositionY )
   {
-    this.originPoint = GeneratePoint( x, y );
+    this.originPoint = GeneratePoint( parameterPositionX, 
+                                      parameterPositionY );
   }
 
-  // amount of given entries, over a specific distance
-  apply( n_entries, distance )
+  // appends a particle unit, to the particle list 
+  addToParticles( append_particle_child )
   {
-    var du = basic_divide( distance, n_entries );
-    return du;
-  }
-
-  append( particle_element )
-  {
-    this.particles = this.particles.concat( particle_element );
+    this.particles = this.particles.concat( append_particle_child );
   }
 
   //
   generate()
   {
-    var ps = this.number_of_particles;
-
-    //
-    for( var i = 0;
-             i < ps;
-             i ++ )
-    {
-      var s = new Particle();
-
-      this.append( s );
-    }
-
+    
   };
 
-  // next 'Frame'
+  //
   update()
   {
     
 
-
   };
+
+
+
 
 };
 
 // Tag: Camera Field
-/*
- *
- */
 class CameraField
     extends Actor
 {
