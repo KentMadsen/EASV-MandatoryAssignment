@@ -89,13 +89,13 @@ class Circle
 Circle.prototype.apply_x =
   function( i )
 {
-  return this.pos.getX() + this.r * Math.cos( toRadians( i ) );
+  return this.pos.getPositionX() + this.r * Math.cos( toRadians( i ) );
 }
 
 Circle.prototype.apply_y =
   function( i )
 {
-  return this.pos.getY() + this.r * Math.sin( toRadians( i ) );
+  return this.pos.getPositionY() + this.r * Math.sin( toRadians( i ) );
 }
 
 // Tag: Entities
@@ -152,130 +152,134 @@ class Counter
 class Point
 {
   //
-    constructor( pX, pY )
-    {
-        this.x = pX;
-        this.y = pY;
-    }
+  constructor( parameterX, 
+               parameterY )
+  {
+    this.setPositionX( parameterX );
+    this.setPositionY( parameterY );
+  }
 
-    //
-    getX()
-    {
-      return this.x;
-    }
+  // Accessor Methods
+  getPositionX()
+  {
+    return this.positionX;
+  }
 
-    setX( value )
-    {
-      this.x = value;
-    }
+  setPositionX( value )
+  {
+    this.positionX = value;
+  }
 
-    //
-    getY()
-    {
-      return this.y;
-    }
+  getPositionY()
+  {
+    return this.positionY;
+  }
 
-    setY( value )
-    {
-      this.y = value;
-    }
-
+  setPositionY( value )
+  {
+    this.positionY = value;
+  }
 }
 
 // Tag: Vector
 class Vector
 {
     //
-    constructor( pX, pY )
+    constructor( parameterX,
+                 parameterY )
     {
-        this.x = pX;
-        this.y = pY;
+      this.setLengthX( parameterX );
+      this.setLengthY( parameterY );
     }
 
     // Accessors
-    getX()
+    getLengthX()
     {
       return this.x;
     }
 
-    setX( value )
+    setLengthX( value )
     {
       this.x = value;
     }
 
-    getY()
+    getLengthY()
     {
       return this.y;
     }
 
-    setY( value )
+    setLengthY( value )
     {
       this.y = value;
     }
 
-    // Function
-      // Works
-    substract( px, py )
+    // Vector Methods
+    substract( parameterX, 
+               parameterY )
     {
-        var nv = GenerateVector( basic_substract( this.x, px ),
-                                 basic_substract( this.y, py ) );
+        var newVector = GenerateVector( basic_substract( this.x, parameterX ),
+                                        basic_substract( this.y, parameterY ) );
 
-        return nv;
+        return newVector;
     }
 
-    // Works
-    addition( px, py )
+    addition( parameterX, 
+              parameterY )
     {
-        var nv = GenerateVector( basic_addition( this.x, px ),
-                                 basic_addition( this.y, py ) );
+        var newVector = GenerateVector( basic_addition( this.x, 
+                                                        parameterX ),
+                                        basic_addition( this.y, 
+                                                        parameterY ) );
 
-        return nv;
+        return newVector;
     }
 
-    // Works
-    scaleByScalar( s )
+    scaleByScalar( scalarValue )
     {
-        var nv = GenerateVector( basic_multiply( s, this.x ),
-                                 basic_multiply( s, this.y ) );
+        var newVector = GenerateVector( basic_multiply( scalarValue, 
+                                                        this.x ),
 
-        return nv;
+                                        basic_multiply( scalarValue, 
+                                                        this.y ) );
+
+        return newVector;
     }
 
     // Not sure ?
-    unitVector()
+    calculateUnitVector()
     {
       // x_e = (x)/|v| and y_e = (y)/|v|
-      var nv = GenerateVector( basic_divide( this.x, this.distance() ),
-                               basic_divide( this.y, this.distance() ) );
+      var newVector = GenerateVector( basic_divide( this.x, 
+                                                    this.distance() ),
 
-      return nv;
+                                      basic_divide( this.y, 
+                                                    this.distance() ) );
+
+      return newVector;
     }
 
     //
-    projectAgaintsUnitVector( v )
+    projectAgaintsUnitVector( unitVector )
     {
-      var nv = GenerateVector( basic_multiply( v.x, this.distance() ),
-                               basic_multiply( v.y, this.distance() ) );
+      var newVector = GenerateVector( basic_multiply( unitVector.x, 
+                                                      this.distance() ),
+                                      basic_multiply( unitVector.y, 
+                                                      this.distance() ) 
+      );
 
-
-      return nv;
+      return newVector;
     }
 
-    // |v(->)| = distance.
-    // Calculates the currents vectors, distance or length
+    //
+    powerOf2( parameterX )
+    {
+      return Math.pow( parameterX, two );
+    }
+
+    //
     distance()
     {
-        // x^2
-        var x_result = Math.pow( this.x, two );
-
-        // y^2
-        var y_result = Math.pow( this.y, two );
-
-        // x_result + y_result
-        var combined = ( x_result + y_result );
-
-        // sqrt(x^2 + y^2) = |v^(->)|
-        return Math.sqrt( combined );
+        return Math.sqrt( ( this.powerOf2( this.x ) + this.powerOf2( this.y ) ) );
     }
 }
 
@@ -485,10 +489,11 @@ class CameraField
 // Tag: Generator Functions
 // Generators
   // Set Parameters
-  function GenerateVector( pX, pY )
-  {
-    return new Vector( pX, pY );
-  }
+function GenerateVector( parameterX, parameterY )
+{
+  return new Vector( parameterX,
+                     parameterY );
+}
 
     // Default Generic Object
 function GenerateEmptyVector()
@@ -498,9 +503,11 @@ function GenerateEmptyVector()
 }
 
   // Choose parameters
-function GeneratePoint( pX, pY )
+function GeneratePoint( parameterX, 
+                        parameterY )
 {
-  return new Point( pX, pY );
+  return new Point( parameterX, 
+                    parameterY );
 }
 
   // Default Generic Object
