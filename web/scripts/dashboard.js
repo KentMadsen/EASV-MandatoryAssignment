@@ -20,8 +20,6 @@
   const d2 = '2d';
   const d3 = '3d';
   
-  const default_wait = 25;
-  
   const debug_system = true;
 
 // Tag: Basic calculation functions
@@ -538,7 +536,7 @@ var canvas_document_identity = 'dashboard';
 function inverse_y_axis_along_canvas( parameterYPosition )
 {
   var rotateYAxisOnCanvas = basicSubstract( canvas_size.y,
-                                             parameterYPosition );
+                                            parameterYPosition );
 
   return rotateYAxisOnCanvas;
 }
