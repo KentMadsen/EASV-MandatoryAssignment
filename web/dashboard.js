@@ -1,95 +1,340 @@
 // Mandatory Assignment
 // Dashboard
-
-//
-var canvas_id = null;
-var context = null;
-
-
-// Properties
-var canvas_size = 
-[
-    width = 1280, 
-    height = 720
-]
-
-
-//
-function Vector( vX, vY )
+ // Class Definitions
+ //
+class Vector
 {
-    this.x = vX;
-    this.y = vY;
+    //
+    constructor( vX, vY )
+    {
+        this.x = vX;
+        this.y = vY;
+    }
+
+
+    // Works
+    substract( px, py )
+    {
+        var newVector = GenVec( ( this.x - px ), 
+                                ( this.y - py ) );
+        return newVector;
+    }
+
+    // Works
+    addition( px, py )
+    {
+        var newVector = GenVec( ( this.x + px ), 
+                                ( this.y + py ) );
+        return newVector;
+    }
+
+    // Works
+    scale( s )
+    {
+        var newVector = GenVec( ( s * this.x ),
+                                ( s * this.y ) );
+        return newVector;
+    }
+
+    pow2( value )
+    {
+        return Math.pow( value, 
+                         two );
+    }
+
+    // |v(->)| = distance.
+    // Calculates the currents vectors, distance or length
+    distance()
+    {
+        // x^2
+        var x_result = this.pow2(this.x);
+                                     
+        // y^2
+        var y_result = this.pow2(this.y);
+
+        // x_result + y_result
+        var combined = (x_result + y_result);
+        
+        // sqrt(x^2 + y^2) = |v^(->)|
+        return Math.sqrt( combined );
+    }
 }
 
-//
-function Point( pX, pY )
+    // Generators
+function GenVec( pX, pY )
 {
-    this.x = pX;
-    this.y = pY;
+    return new Vector( pX, pY );
 }
-
-
+    
 function GenEmptyVector()
 {
     return GenVec(0, 0);
 }
 
-function GenVec( pX, pY )
+
+/* 
+*/
+class Entity
 {
-    return new Vector( pX, pY );
+    constructor();
+
+};
+
+/* 
+ *
+ */
+class Actor 
+    extends Entity
+{
+    constructor();
+
+};
+
+/*
+ * 
+ */
+class Effect 
+    extends Entity
+{
+    constructor();
+
+};
+
+/* 
+ *
+ */
+class Interactive 
+    extends Entity
+{
+    constructor();
+
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 
+ *
+ */
+class CameraField 
+    extends Actor
+{
+    constructor();
+
+};
+
+
+// Vector Coordinate
+class Point
+{
+    constructor( pX, pY )
+    {
+        this.x = pX;
+        this.y = pY;
+    }
+
 }
 
-function init()
-{
-    canvas_id = document.getElementById('dashboard');
-    context   = canvas_id.getContext('2d');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    next();
-}
+// Tag: Variables
+    // Application Variables
+var canvas_id = null;
+var context = null;
 
-function line( v1, 
-               v2 )
+var Continue = true;
+
+//
+var start_screen_pos = new Point(0, 0);
+
+// Properties
+var canvas_size = new Vector(1280, 720);
+var canvas_id_name = 'dashboard';
+
+// Static Globals
+const two = 2;
+const dimension = '2d';
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Tag: context functions
+// Draw on Context: Base Functions
+// Base Drawing
+function line( point_begin, 
+               point_end )
 {    
     context.beginPath();
 
-    context.moveTo( v1.x, 
-                    v1.y );
+    context.moveTo( point_begin.x, 
+                    point_begin.y );
 
-    context.lineTo( v2.x, 
-                    v2.y );
+    context.lineTo( point_end.x, 
+                    point_end.y );
 
     context.stroke();
 }
 
+// Parameters: SP (Start Point), V: Vector (size and direction)
+function clearScreenAt(SP, V)
+{
+    var toPoint = V.addition( SP.x, SP.y );
+
+    context.clearRect( SP.x, SP.y, 
+                       toPoint.x, toPoint.y);
+}
+
+function clearScreen()
+{
+    clearScreenAt( start_screen_pos,
+                   canvas_size )   
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Program Logic
+    // Initialise Stage
+function init()
+{
+    //
+    configure();
+
+    //
+    prepare();
+
+    // Starts system
+    next();
+}
+
+        // Configuration
+function configure()
+{
+    configure_stage();
+
+
+}
+
+            // setup required components
+function configure_stage()
+{
+    canvas_id = document.getElementById( canvas_id_name );
+    context = canvas_id.getContext( dimension );
+}
+
+        //
+function prepare()
+{
+
+}
+
 // Draw Operations
-function axis()
-{
-
-}
-
-function relations()
-{
-
-}
-
-function plot()
-{
-
-}
-
 function draw()
 {
-    axis();
+    clearScreen();
 
-    plot();    
+    //
+    analyze();
+
+    // 
+    map();
+
+    // Outline
+    representation();
+
+    // Draw
+    present();
 
     next();
 }
 
-
-function next()
+// Phrases
+    //
+function clear()
 {
-    window.requestAnimationFrame( draw );
+    // Clean current Canvas
+    clearScreen();
 }
 
+    // 
+function analyze()
+{
+
+}
+
+    //
+function map()
+{
+
+}
+
+    // 
+function representation()
+{
+
+}
+
+    // final stage: 
+function present()
+{
+
+}
+
+// Internal Business Logic Phrase
+function update()
+{
+
+    
+    next();
+}
+
+
+// Request a new frame or stop
+function next()
+{
+    //
+    if( Continue )
+    {
+        //
+        additional();
+
+        // Update System Model
+        update();
+        
+        //
+        window.requestAnimationFrame( draw );
+    }
+}
+
+function additional()
+{
+
+}
+
+// Execute Script
 init();

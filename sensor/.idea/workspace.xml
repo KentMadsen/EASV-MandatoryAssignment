@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7755ff48-967e-428e-ac74-2af7a28f08f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/business/services/ServiceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/Persistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/PersistenceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/cacheSystem/CacheSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/databaseSystem/DatabaseSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/fileSystem/FileSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/panel/PipelineIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/persistence/panel/PipelineOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sensor/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sensor/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/serviceRegister/ServerRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/serviceRegister/ServiceRegisterEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/MicrophoneService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/entities/AudioBufferSample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/entities/AudioSectionData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/entities/Buffer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sensor/services/entities/Counter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/services/MicrophoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/services/microphoneService/MicrophoneService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/services/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/services/serviceRegister/ServerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/services/serviceRegister/ServerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/services/serviceRegister/ServiceRegisterEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/services/serviceRegister/ServiceRegisterEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/animation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../web/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../web/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/test_dynamic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/test_graph.html" beforeDir="false" />
-    </list>
+    <list default="true" id="7755ff48-967e-428e-ac74-2af7a28f08f9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +27,7 @@
     <session id="300425643">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.34" value="1" />
@@ -331,12 +299,12 @@
       <updated>1542082661090</updated>
       <workItem from="1542082666380" duration="22180000" />
       <workItem from="1542182324324" duration="22470000" />
-      <workItem from="1542228097930" duration="1076000" />
+      <workItem from="1542228097930" duration="1706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45726000" />
+    <option name="totallyTimeSpent" value="46356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
