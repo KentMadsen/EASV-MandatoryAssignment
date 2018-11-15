@@ -1,12 +1,8 @@
-// Mandatory Assignment
-// Dashboard
-
-
 /* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Name : Kent v. Madsen
 */
 
-// Class Definitions
+// Tag: Basic calculation functions
 function basic_substract( a, b )
 {
   return a - b;
@@ -27,6 +23,7 @@ function basic_divide( a, b )
   return a / b;
 }
 
+// Tag: Convertion, Degrees or Radians
 // Convertion of Degrees or Radians
 // Source
 function toRadians( degrees )
@@ -40,19 +37,22 @@ function toDegress( radians )
 }
 
 
-//
+// Tag: Vector Functions
 class VectorParameterFunction
 {
+  //
   constructor()
   {
     this.pos = GenerateEmptyPoint();
   }
 
+  // get x pos
   apply_x( i )
   {
     return -1;
   }
 
+  // get y pos
   apply_y( i )
   {
     return -1;
@@ -95,11 +95,6 @@ Circle.prototype.apply_y =
   return this.pos.getY() + this.r * Math.sin( toRadians( i ) );
 }
 
-
-
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
 // Tag: Entities
 class Counter
 {
@@ -150,7 +145,7 @@ class Counter
   
 }
 
-// Vector Coordinate
+// Tag: Vector Points
 class Point
 {
   //
@@ -184,6 +179,7 @@ class Point
 
 }
 
+// Tag: Vector
 class Vector
 {
     //
@@ -280,7 +276,7 @@ class Vector
     }
 }
 
-//
+// Tag: Particle Unit
 class Particle 
   extends Point
 {
@@ -293,8 +289,8 @@ class Particle
 
 }
 
-
-//
+// Tag: Object Buffer Types
+  	// Tag: Model
 class Model
 {
   constructor()
@@ -306,6 +302,8 @@ class Model
 
 }
 
+
+  	// Tag: Container
 class Container
 {
   constructor()
@@ -315,9 +313,17 @@ class Container
 }
 
 
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+  	// Tag: Frame
+class Frame
+{
+  constructor()
+  {
+
+  };
+}
+
+
+// Tag: Entity
 /**
  * 
  */
@@ -334,6 +340,7 @@ class Entity
 };
 
 
+// Tag: Object
 /**
  * 
  */
@@ -349,6 +356,8 @@ class Object
 
 };
 
+
+// Tag: Actor
 /*
  *
  */
@@ -364,6 +373,7 @@ class Actor
 };
 
 
+// Tag: Effect
 /*
  *
  */
@@ -380,6 +390,7 @@ class Effect
 
 };
 
+// Tag: Interactive
 /*
  *
  */
@@ -394,7 +405,6 @@ class Interactive
 
 };
 
-
 // Tag: Systems
 class ParticleSystem 
   extends Effect
@@ -407,7 +417,7 @@ class ParticleSystem
       this.number_of_particles = 256;
       this.particles           = new Array();
       
-      this.sequence   = new Counter();
+      this.sequence            = new Counter();
   };
 
   setOrigin( x, y )
@@ -418,7 +428,7 @@ class ParticleSystem
   // amount of given entries, over a specific distance
   apply( n_entries, distance )
   {
-    var du = (distance / n_entries);
+    var du = basic_divide( distance, n_entries );
     return du;
   }
 
@@ -476,6 +486,7 @@ class ParticleSystem
 
 };
 
+// Tag: Camera Field
 /*
  *
  */
@@ -491,10 +502,7 @@ class CameraField
 
 };
 
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
-
+// Tag: Generator Functions
 // Generators
   // Set Parameters
   function GenerateVector( pX, pY )
@@ -521,41 +529,47 @@ function GenerateEmptyPoint()
 }
 
 
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+// Tag: System Variables
+  // Tag: Global Static Variables
+const zero  = 0;
+const one   = 1;
+const two   = 2;
+const three = 3;
+const four  = 4;
+const five  = 5;
+const six   = 6;
+const seven = 7;
+const eight = 8;
+const nine  = 9;
 
-// Tag: Variables
-    // Application Variables
-var canvas_id = null;
-var context = null;
-
-var Continue = true;
-
-//
-var start_screen_pos  = GeneratePoint(0, 0);
-
-// Properties
-var canvas_size       = GenerateVector( 1280, 720 );
-
-
-var canvas_id_name = 'dashboard';
-
-// Static Globals
-const two = 2;
-
-const dimension = '2d';
+const d2 = '2d';
+const d3 = '3d';
 
 const debug_system = true;
 
+    // Tag: Global
+var canvas_id = null;
+var context   = null;
 
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+var Continue = true;
 
-// Tag: context functions
-// Draw on Context: Base Functions
-// Base Drawing
+var start_screen_pos  = GeneratePoint( 0, 0 );
+var canvas_size       = GenerateVector( 1280, 720 );
+
+var canvas_id_name = 'dashboard';
+
+var ps_test;
+
+// Tag: context draw functions
+  // Inverse function, for the y axis in canvas.
+function inverse_y_axis_along_canvas( y_position )
+{
+  var rv = basic_substract( canvas_size.y, 
+                            y_position );
+
+  return rv;
+}
+
 function line( point_begin,
                point_end )
 {
@@ -570,14 +584,18 @@ function line( point_begin,
     context.stroke();
 }
 
+// Parameters: SP (Start Point), V: Vector (size and direction)
+function clearScreenAt( SP, V )
+{
+    var toPoint = V.addition( SP.x, SP.y );
 
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+    context.clearRect( SP.x, SP.y,
+                       toPoint.x, toPoint.y);
+}
+
 
 // P: p.x, p.y, center point, inside x, y coordinate system
 // V: v.x = radius, v.y = width
-//
 function illustrate_point( p, 
                            v, 
                            fillcolor, 
@@ -586,6 +604,7 @@ function illustrate_point( p,
   // Skip, if debugging is off
   if( debug_system == false )
     return;
+
   //
   context.beginPath();
 
@@ -604,36 +623,7 @@ function illustrate_point( p,
 }
 
 
-function inverse_y_axis_along_canvas( y_position )
-{
-  // canvas_height - y = ( y+ )
-  var rv = canvas_size.y -  y_position;
-
-// Inverses the y position on the canvas, so it's drawn alon the positive side of y, than -
-  return rv;
-}
-
-// Parameters: SP (Start Point), V: Vector (size and direction)
-function clearScreenAt( SP, V )
-{
-    var toPoint = V.addition( SP.x, SP.y );
-
-    context.clearRect( SP.x, SP.y,
-                       toPoint.x, toPoint.y);
-}
-
-function clearScreen()
-{
-    clearScreenAt( start_screen_pos,
-                   canvas_size )
-}
-
-
-/* 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
-
-// Program Logic
+// Tag: Business Logic
         // Configuration
 function configure()
 {
@@ -646,7 +636,7 @@ function configure()
 function configure_stage()
 {
     canvas_id = document.getElementById( canvas_id_name );
-    context = canvas_id.getContext( dimension );
+    context = canvas_id.getContext( d2 );
 }
 
 // Phrases
@@ -678,14 +668,11 @@ function present()
 // Program Structure
 
 // Internal Business Logic Phrase
-//
 function prepare()
 {
   prepare_test();
 }
 
-
-var ps_test;
 
 function prepare_test()
 {
@@ -699,14 +686,9 @@ function prepare_test()
 
 };
 
-// Initialise Stage
+// Tag: Initialise Screen
 function init()
 {
-  var c = new Counter();
-
-
-  console.log(c);
-
   //
   configure();
 
@@ -717,8 +699,7 @@ function init()
   next();
 }
 
-
-// Draw Operations
+// Tag: Update Screen
 function draw()
 {
   clear();
@@ -739,24 +720,26 @@ function draw()
   next();
 }
 
-// inside of next, maybe ?
+// Tag: Clear
 function clear()
 {
   // Clean current Canvas
   clearScreen();
 }
 
+function clearScreen()
+{
+    clearScreenAt( start_screen_pos,
+                   canvas_size )
+}
 
-// Request a new frame or stop
+// Tag: Next Frame Iteration
 function next()
 {
     //
     if( Continue )
     {
-        //
-        additional();
-
-        // Update System Model
+        // Updates System Model
         update();
 
         //
@@ -764,14 +747,7 @@ function next()
     }
 }
 
-//
-function additional()
-{
-
-}
-
-//
-
+// Tag: Update Model
 function update()
 {
   ps_test.update();
@@ -779,5 +755,8 @@ function update()
 
 }
 
-// Execute Script
+// Tag: Application Event
+
+
+// Tag: Application Entry
 init();
