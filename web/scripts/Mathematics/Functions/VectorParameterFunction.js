@@ -4,9 +4,10 @@
     Source Code Author : Kent Madsen
     Copyright 2018 Kent v Madsen
 */
+requirement( '', '', '' );
 
 // Tag: Vector Functions
-class VectorParameterFunction
+class VectorFunction
 {
   constructor()
   {

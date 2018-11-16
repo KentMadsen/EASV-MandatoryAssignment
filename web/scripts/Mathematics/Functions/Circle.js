@@ -7,7 +7,7 @@
 
 // Tag: Circle class
 class Circle
-  extends VectorParameterFunction
+  extends VectorFunction
 {
   constructor()
   {

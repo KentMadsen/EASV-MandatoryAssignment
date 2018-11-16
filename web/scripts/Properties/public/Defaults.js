@@ -23,3 +23,6 @@ const nine  = 9;
 // Tag: Global Static Variables
 const d2 = '2d';
 const d3 = '3d';
+
+const script = "script";
+const script_element_type = "text/javascript";;

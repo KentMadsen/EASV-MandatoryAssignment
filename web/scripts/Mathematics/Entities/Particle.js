@@ -9,6 +9,7 @@
 class Particle
   extends Point
 {
+  
   constructor()
   {
       super();
