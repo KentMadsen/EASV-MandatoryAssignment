@@ -36,27 +36,6 @@ function configure_stage()
     canvas_context  = canvas_document.getContext( d2 );
 }
 
-// Phrases
-function analyze()
-{
-
-}
-
-function map()
-{
-
-}
-
-function representation()
-{
-
-}
-
-function present()
-{
-
-}
-
 // Program Structure
   // Internal Business Logic Phrase
 function prepareModel()
