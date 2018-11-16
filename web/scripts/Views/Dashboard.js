@@ -19,29 +19,9 @@ var canvas_size       = GenerateVector( 1280, 720 );
 
 var canvas_document_identity = 'dashboard';
 
-
-// Tag: context draw functions
-function inverse_y_axis_along_canvas( parameterYPosition )
-{
-  var rotateYAxisOnCanvas = basicSubstract( canvas_size.y,
-                                            parameterYPosition );
-
-  return rotateYAxisOnCanvas;
-}
-
-function clearScreenAt( parameterStartPoint, 
-                        parameterLength )
-{
-    var toPoint = parameterLength.addition( parameterStartPoint.x, 
-                                            parameterStartPoint.y );
-
-    canvas_context.clearRect( parameterStartPoint.x, parameterStartPoint.y,
-                              toPoint.x, toPoint.y);
-}
-
 // Tag: Business Logic
         // Configuration
-function configure()
+function configureSetup()
 {
   // Setup Canvas Document
     configure_stage();
@@ -79,75 +59,75 @@ function present()
 
 // Program Structure
   // Internal Business Logic Phrase
-function prepare()
+function prepareModel()
 {
   
 }
 
 // Tag: Initialise Screen
-function init()
+function initialise()
 {
   //
-  configure();
+  configureSetup();
 
   //
-  prepare();
+  prepareModel();
 
   // Starts system
-  next();
+  nextFrame();
 }
 
 // Tag: Update Screen
-function draw()
+function drawFrame()
 {
-  // resets canvas display
-  clear();
-
-  analyze();
-  map();
-  representation();
-  present();
+    
 
   // request next frame
-  next();
+  nextFrame();
 }
 
 // Tag: Clear
-function clear()
+function clearFrame()
 {
   // Clean current Canvas
-  clearScreen();
+  clearFrameScreen();
+
+  // other
 }
 
-
-function clearScreen()
+function clearFrameScreen()
 {
     clearScreenAt( start_screen_pos,
                    canvas_size )
 }
 
 // Tag: Next Frame Iteration
-function next()
+function nextFrame()
 {
+    
+    // Updates System Model
+    updateModel();
+
     //
     if( Continue )
     {
-        // Updates System Model
-        update();
+        // resets canvas display
+        clearFrame();
 
         //
-        setTimeout( request,
+        setTimeout( requestFrame,
                     wait_for_next_frame );
     }
 }
 
-function request()
+//
+function requestFrame()
 {
-    window.requestAnimationFrame( draw );
+    window.requestAnimationFrame( drawFrame );
 }
 
 // Tag: Update Model
-function update()
+function updateModel()
 {
 
 
@@ -157,4 +137,4 @@ function update()
 
 
 // Tag: Application Entry
-init();
+initialise();
