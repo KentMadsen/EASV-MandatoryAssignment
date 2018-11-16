@@ -8,6 +8,3 @@
 *.xml
 
 *.class
-
-# node js
-*.json
