@@ -6,8 +6,8 @@
 */
 
 // Tag: Interactive
-class Interactive
-    extends Entity
+class DomainInteractive
+    extends DomainEntity
 {
     constructor()
     {

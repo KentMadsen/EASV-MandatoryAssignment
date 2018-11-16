@@ -5,15 +5,15 @@
     Copyright 2018 Kent v Madsen
 */
 
-// Tag: Actor
-class Actor
-    extends Entity
+// Tag: Camera Field
+class CameraField
+    extends DomainActor
 {
     constructor()
     {
       super();
+      //
 
     };
 
 };
-

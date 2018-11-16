@@ -6,8 +6,8 @@
 */
 
 // Tag: Object
-class Object
-  extends Entity
+class DomainObject
+  extends DomainEntity
 {
   constructor()
   {

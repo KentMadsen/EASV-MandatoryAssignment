@@ -5,14 +5,13 @@
     Copyright 2018 Kent v Madsen
 */
 
-// Tag: Effect
-class Effect
-    extends Entity
+// Tag: Entity
+class DomainEntity
 {
     constructor()
     {
-      super();
-      //
+      this.originPoint = GenerateEmptyVector();
+
     };
 
 
