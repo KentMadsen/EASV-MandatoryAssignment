@@ -5,15 +5,16 @@
     Copyright 2018 Kent v Madsen
 */
 
-// Tag: Actor
-class DomainActor
-    extends DomainEntity
+// Tag: Particle Unit
+class Particle2D
+  extends Point2D
 {
-    constructor()
-    {
+  
+  constructor()
+  {
       super();
 
-    };
+      this.dv = GenerateEmptyVector();
+  }
 
-};
-
+}

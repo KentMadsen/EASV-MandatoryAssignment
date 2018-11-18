@@ -6,7 +6,7 @@
 */
 
 // Tag: Vector
-class Vector
+class Vector2D
 {
     //
     constructor( parameterX,

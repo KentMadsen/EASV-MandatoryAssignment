@@ -6,7 +6,7 @@
 */
 
 // Tag: Vector Points
-class Point
+class Point2D
 {
   
   constructor( parameterX, 
