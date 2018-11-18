@@ -5,6 +5,11 @@
     Copyright 2018 Kent v Madsen
 */
 
+requirement('/Graphics/Canvas.js');
+requirement('/Graphics/Operations.js');
+requirement('/Graphics/Phrases.js');
+
+
 // Tag: System Variables
     // Tag: Global
 var canvas_document = null;
@@ -12,12 +17,12 @@ var canvas_context  = null;
 
 var Continue = true;
 
-var wait_for_next_frame = default_wait;
+var wait_for_next_frame = 2;
 
-var start_screen_pos  = GeneratePoint( 0, 0 );
-var canvas_size       = GenerateVector( 1280, 720 );
+var start_screen_pos  = null;
+var canvas_size       = ( 1280, 720 );
 
-var canvas_document_identity = 'dashboard';
+var canvas_document_identity = 'game';
 
 // Tag: Business Logic
         // Configuration
@@ -33,7 +38,7 @@ function configureSetup()
 function configure_stage()
 {
     canvas_document = document.getElementById( canvas_document_identity );
-    canvas_context  = canvas_document.getContext( d2 );
+    canvas_context  = canvas_document.getContext( '2d' );
 }
 
 // Program Structure
@@ -76,8 +81,8 @@ function clearFrame()
 
 function clearFrameScreen()
 {
-    clearScreenAt( start_screen_pos,
-                   canvas_size )
+    canvas_context.clearRect( 0,0, 
+                              960, 560);
 }
 
 // Tag: Next Frame Iteration
@@ -95,7 +100,7 @@ function nextFrame()
 
         //
         setTimeout( requestFrame,
-                    wait_for_next_frame );
+                    2 );
     }
 }
 
