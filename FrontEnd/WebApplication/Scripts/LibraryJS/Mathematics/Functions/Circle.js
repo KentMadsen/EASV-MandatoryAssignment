@@ -9,6 +9,7 @@
 class Circle
   extends VectorFunction
 {
+  //
   constructor()
   {
     super();
@@ -16,6 +17,9 @@ class Circle
     this.radius = 1;
   }
 
+  
+
+  //
   getRadius()
   {
     return this.radius;
@@ -28,14 +32,23 @@ class Circle
 
 }
 
+//
 Circle.prototype.applyX =
   function( degrees )
 {
-  return this.centerPosition.getPositionX() + this.radius * Math.cos( toRadians( degrees ) );
+  return this.centerPosition.getPositionX() + this.getRadius() * Math.cos( toRadians( degrees ) );
 }
 
 Circle.prototype.applyY =
   function( degrees )
 {
-  return this.centerPosition.getPositionY() + this.radius * Math.sin( toRadians( degrees ) );
+  return this.centerPosition.getPositionY() + this.getRadius() * Math.sin( toRadians( degrees ) );
+}
+
+//
+Circle.prototype.applyP =
+  function( valueX, valueY )
+{
+  return  GeneratePoint( this.applyX( valueX ), 
+                         this.applyY( valueY ) );
 }

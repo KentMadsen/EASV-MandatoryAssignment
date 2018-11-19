@@ -7,14 +7,15 @@
 
 // Tag: Particle Unit
 class Particle2D
-  extends Point2D
 {
-  
+//
   constructor()
   {
-      super();
-
-      this.dv = GenerateEmptyVector();
+  
   }
+
+
+
+
 
 }

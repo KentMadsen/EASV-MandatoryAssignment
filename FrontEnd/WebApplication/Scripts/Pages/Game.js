@@ -5,53 +5,35 @@
     Copyright 2018 Kent v Madsen
 */
 
-var document_canvas= null;
-var canvas_context  = null;
+var co = null;
 
+var v         = null;
+var iteration = null;
+
+var waitRequest = 200;
+
+var sleep_state = true;
 
 function initialise()
 {
-    //
-    document_canvas = document.getElementById('dashview');
-    canvas_context = document_canvas.getContext('2d');
-    
-    load();
+    iteration = new Counter();
+
+    co = new CanvasOverview( 'dashview' );
+
+    play();
 }
 
-function load()
+function sleep()
 {
-    // Mathematics
-    requirement('/Mathematics/Functions/Calculate.js');
     
-    requirement('/Mathematics/Functions/VectorParameterFunction.js');
-    requirement('/Mathematics/Functions/Circle.js');
-    requirement('/Mathematics/Functions/Counter.js');
-    requirement('/Mathematics/Functions/Degrees.js');
-    requirement('/Mathematics/Functions/Statistics.js');
-
-
-        //
-    requirement('/Mathematics/Entities/point2d.js');
-    requirement('/Mathematics/Entities/vector2d.js');
-    requirement('/Mathematics/Entities/particle2d.js');
-
-        //
-    requirement('/Mathematics/Entities/point3d.js');
-    requirement('/Mathematics/Entities/vector3d.js');
-    requirement('/Mathematics/Entities/particle3d.js');
-
-        // Graphics
-    requirement('/Graphics/Canvas.js');
-    requirement('/Graphics/Operations.js');
-    requirement('/Graphics/Phrases.js');
-
-
 
 }
 
 function play()
 {
 
+    window.setTimeout( requestAnimationFrame( play ),
+                       waitRequest );
 }
 
 initialise();

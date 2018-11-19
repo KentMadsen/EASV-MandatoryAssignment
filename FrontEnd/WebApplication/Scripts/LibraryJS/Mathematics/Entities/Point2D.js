@@ -8,8 +8,8 @@
 // Tag: Vector Points
 class Point2D
 {
-  
-  constructor( parameterX, 
+  //
+  constructor( parameterX,
                parameterY )
   {
     this.setPositionX( parameterX );
@@ -17,19 +17,21 @@ class Point2D
   }
 
   // Accessor Methods
+    //
   getPositionX()
   {
     return this.positionX;
   }
 
-  setPositionX( value )
-  {
-    this.positionX = value;
-  }
-
   getPositionY()
   {
     return this.positionY;
+  }
+
+    //
+  setPositionX( value )
+  {
+    this.positionX = value;
   }
 
   setPositionY( value )

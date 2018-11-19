@@ -27,6 +27,7 @@ class Vector2D
       this.x = value;
     }
 
+    //
     getLengthY()
     {
       return this.y;
@@ -41,69 +42,117 @@ class Vector2D
     substract( parameterX, 
                parameterY )
     {
-        var newVector = GenerateVector( basicSubstract( this.x, parameterX ),
-                                        basicSubstract( this.y, parameterY ) );
-
-        return newVector;
+        return GenerateVector( this.substractX( parameterX ), 
+                               this.substractY( parameterY ) );
     }
 
+    substractX( parameterX )
+    {
+      return basicSubstract( this.getLengthX(), 
+                             parameterX );
+    }
+
+    substractY( parameterY )
+    {
+      return basicSubstract( this.getLengthY(), 
+                             parameterY );
+    }
+
+    // Addition function
     addition( parameterX, 
               parameterY )
     {
-        var newVector = GenerateVector( basicAddition( this.x, 
-                                                        parameterX ),
-                                        basicAddition( this.y, 
-                                                        parameterY ) );
-
-        return newVector;
+        return GenerateVector( this.additionX( parameterX ),
+                               this.additionY( parameterY ) );
     }
 
-    scaleByScalar( scalarValue )
+    //
+    additionX( parameterX )
     {
-        var newVector = GenerateVector( basicMultiply( scalarValue, 
-                                                        this.x ),
+      return basicAddition( this.getLengthX(),
+                            parameterX );
+    }
 
-                                        basicMultiply( scalarValue, 
-                                                        this.y ) );
-
-        return newVector;
+    additionY( parameterY )
+    {
+      return basicAddition( this.getLengthY(),
+                            parameterY );
     }
 
     calculateUnitVector()
     {
-      var newVector = GenerateVector( basicDivide( this.x, 
-                                                    this.distance() ),
+      var distanceLength = this.distance();
 
-                                      basicDivide( this.y, 
-                                                    this.distance() ) );
+      return this.divideByScalar( distanceLength );
+    }
 
-      return newVector;
+    divideByScalar( scalar )
+    {
+      return GenerateVector( this.divideByScalarX( scalar ), 
+                             this.divideByScalarY( scalar )
+      );
+    }
+
+    divideByScalarX( scalar )
+    {
+      return this.getLengthX() / scalar;
+    }
+
+    divideByScalarY( scalar )
+    {
+      return this.getLengthY() / scalar;
     }
 
     projectAgaintsUnitVector( unitVector )
     {
-      var newVector = GenerateVector( basicMultiply( unitVector.x, 
-                                                      this.distance() ),
-                                      basicMultiply( unitVector.y, 
-                                                      this.distance() ) 
-      );
-
-      return newVector;
+      return  GenerateVector( this.scaleByScalarX( unitVector.getLengthX ),
+                              this.scaleByScalarY( unitVector.getLengthY ) );
     }
 
-    powerOf2( parameterX )
+    isUnitVector()
     {
-      return Math.pow( parameterX, two );
+      return ( this.distance() == one );
     }
 
+    //
+    scaleByScalar( scalarValue )
+    {
+      return GenerateVector( this.scaleByScalarX( scalarValue ),
+                             this.scaleByScalarY( scalarValue ) );
+    };
+    
+    scaleByScalarX( scalarValue )
+    {
+      return basicMultiply( scalarValue, 
+                            this.getLengthX() );
+    }
+    
+    scaleByScalarY( scalarValue )
+    {
+      return basicMultiply( scalarValue, 
+                            this.getLengthY() );
+    }
+
+    powerOf2( parameter )
+    {
+      return Math.pow( parameter,
+                       two );
+    }
+
+    //
     distance()
     {
-        return Math.sqrt( ( this.powerOf2( this.x ) + this.powerOf2( this.y ) ) );
+        return Math.sqrt( basicAddition( this.powerOf2( this.getLengthX() ),
+                                         this.powerOf2( this.getLengthY() ) ) 
+        );
     }
+
+
 }
 
 // 
-function GenerateVector( parameterX, parameterY )
+function GenerateVector( parameterX, 
+                         parameterY )
 {
   return new Vector( parameterX,
                      parameterY );

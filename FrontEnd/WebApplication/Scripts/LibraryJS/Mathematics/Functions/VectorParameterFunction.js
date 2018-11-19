@@ -8,19 +8,24 @@
 // Tag: Vector Functions
 class VectorFunction
 {
-  constructor()
-  {
-    this.centerPosition = GenerateEmptyPoint();
-  }
+    constructor()
+    {
+      this.centerPosition = new Point2D(0, 0);
+    }
 
-  applyX( valueI )
-  {
-    return -1;
-  }
+    applyX( valueI )
+    {
+      return this.centerPosition.setPositionX(valueI);
+    }
 
-  applyY( valueI )
-  {
-    return -1;
-  }
+    applyY( valueI )
+    {
+      return this.centerPosition.setPositionY(valueI);
+    }
+
+    applyP( valueX, valueY )
+    { 
+      return GenerateVector(valueX, valueY);
+    }
 
 }

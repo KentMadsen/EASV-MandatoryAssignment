@@ -5,15 +5,16 @@
     Copyright 2018 Kent v Madsen
 */
 
+const default_position = 0;
+const default_distance = 1;
+
 class Counter
 {
-  
   constructor()
   {
-    this.value = 0;
+    this.distance = default_distance;
 
-    this.default_position = 0;
-    this.default_distance = 1;
+    this.value = this.getDefaultPosition();
   }
 
   // Functions
