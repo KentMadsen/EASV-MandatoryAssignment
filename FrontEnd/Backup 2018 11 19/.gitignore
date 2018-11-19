@@ -1,0 +1,8 @@
+# Directories
+/Copyright/*
+
+# 
+*.css
+
+# PowerShell Scripts
+*.ps1
