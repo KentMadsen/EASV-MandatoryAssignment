@@ -32,6 +32,7 @@ class CanvasOverview
     }
 
         // Dimension
+            // Width
     setWidth( width )
     {
         this.width = width;
@@ -41,7 +42,7 @@ class CanvasOverview
     {
         return this.width;
     }
-
+            // Height
     setHeight( height )
     {
         this.height = height;

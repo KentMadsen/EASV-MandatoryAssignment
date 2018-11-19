@@ -17,8 +17,6 @@ class Circle
     this.radius = 1;
   }
 
-  
-
   //
   getRadius()
   {
@@ -36,13 +34,25 @@ class Circle
 Circle.prototype.applyX =
   function( degrees )
 {
-  return this.centerPosition.getPositionX() + this.getRadius() * Math.cos( toRadians( degrees ) );
+  return this.centerPosition.getPositionX() + ( this.getRadius() * sinus( degrees ) );
 }
 
 Circle.prototype.applyY =
   function( degrees )
 {
-  return this.centerPosition.getPositionY() + this.getRadius() * Math.sin( toRadians( degrees ) );
+  return this.centerPosition.getPositionY() + ( this.getRadius() * cosinus( degrees ) );
+}
+
+//
+function sinus( degrees )
+{
+  return Math.sin( toRadians( degrees ) );
+}
+
+//
+function cosinus( degrees )
+{
+  return Math.cos( toRadians( degrees ) );
 }
 
 //
