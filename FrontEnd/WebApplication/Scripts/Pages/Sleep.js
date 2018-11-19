@@ -12,25 +12,19 @@ var iteration = null;
 
 var waitRequest = 200;
 
-var sleep_state = true;
-
 function initialise()
 {
     iteration = new Counter();
 
     co = new CanvasOverview( 'dashview' );
 
-    play();
-}
-
-function sleep()
-{
     
-
+    play();
 }
 
 function play()
 {
+
 
     window.setTimeout( requestAnimationFrame( play ),
                        waitRequest );

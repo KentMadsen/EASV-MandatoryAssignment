@@ -15,8 +15,6 @@ class ApplicationFramework
     {
 
     }
-
-    
     
 }
 
@@ -29,7 +27,7 @@ function entry()
     
     application.setup();
 
-    console.log(application);
+    console.log( application );
 }
 
 entry();
