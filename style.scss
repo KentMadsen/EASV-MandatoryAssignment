@@ -1,0 +1,20 @@
+/* Define Area */
+@import './scss/_include.scss';
+
+//
+%no-start-margin
+{
+    margin: 0px;
+}
+
+%no-start-margin-and-padding
+{
+    @extend %no-start-margin;
+    padding: 0px;
+}
+
+// include
+@import './pages_scss/header.scss';
+@import './pages_scss/footer.scss';
+
+@import './pages_scss/index.scss';
