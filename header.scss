@@ -1,0 +1,104 @@
+/* Header Area */
+header
+{
+    @extend %no-start-margin-and-padding;
+    
+}
+
+.menu ol
+{   
+    @extend %no-start-margin;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: #b2bec3;
+    transition: $time;
+}
+
+.menu a:hover
+{
+    transition: $time;
+    color:#2d3436;
+    
+}
+
+.menu a:active
+{
+    transition: $time;
+    color:#e74c3c;
+    
+    
+}
+
+/* Button Area */
+.button-container
+{
+    margin-left: 26px;
+    margin-right: 26px;
+
+    font-size: $menu-font-size;
+    font-family: $font-stack-menu;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button-container li
+{
+    display: flex;
+
+    justify-content : center;
+    flex-direction  : row;
+    flex-wrap       : wrap;
+    
+}
+
+
+.button-container li div
+{
+    display: block;
+    
+}
+
+.button-container
+{
+
+}
+
+.button-container:first-child
+{
+    
+}
+
+.button-container:last-child
+{
+    
+}
+
+.frame
+{
+    text-align: center;
+}
+
+.frame-logo
+{
+    margin-right: 6px;
+    margin-left: 12px;
+}
+
+.frame-descriptor
+{
+    margin-left: 6px;
+    margin-right: 12px;
+    
+
+}
