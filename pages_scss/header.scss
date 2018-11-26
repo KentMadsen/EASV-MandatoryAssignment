@@ -2,12 +2,12 @@
 header
 {
     @extend %no-start-margin-and-padding;
-    
+    border-bottom: 1px solid gray;
 }
 
 .menu ol
 {   
-    @extend %no-start-margin;
+    @extend %no-start-margin-and-padding;
 
     margin-top: 12px;
     margin-bottom: 12px;
@@ -17,6 +17,7 @@ header
     display: flex;
     justify-content: center;
 }
+
 
 .menu a
 {
@@ -36,18 +37,19 @@ header
 {
     transition: $time;
     color:#e74c3c;
-    
-    
 }
 
 /* Button Area */
 .button-container
 {
+    transition: $time;
+
     margin-left: 26px;
     margin-right: 26px;
 
     font-size: $menu-font-size;
     font-family: $font-stack-menu;
+
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -55,18 +57,45 @@ header
 .button-container li
 {
     display: flex;
+    
+    transition: $time;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    border-top: 2px solid #b2bec3;
 
     justify-content : center;
     flex-direction  : row;
     flex-wrap       : wrap;
-    
 }
 
+.button-container:hover li 
+{
+    border-top: 2px solid #2d3436;
+}
+
+.button-container:active li 
+{
+    border-top: 2px solid #e74c3c;
+}
 
 .button-container li div
 {
     display: block;
-    
+}
+
+#menu-header-selected
+{
+    border: 2px solid #e74c3c;
+    color:#e74c3c;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#menu-header-selected:hover
+{
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .button-container
