@@ -9,6 +9,8 @@ header
 {   
     @extend %no-start-margin-and-padding;
 
+    float: left;
+
     margin-top: 12px;
     margin-bottom: 12px;
 
@@ -130,4 +132,9 @@ header
     margin-right: 12px;
     
 
+}
+
+.header-logo
+{
+    
 }
