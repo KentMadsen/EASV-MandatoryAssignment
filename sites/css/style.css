@@ -168,6 +168,9 @@ header {
 /* footer Area */
 footer {
   grid-area: auto;
+  border-top: 1px solid gray;
+  padding: 0px;
+  margin: 0px;
 }
 
 .footer-page {
@@ -216,6 +219,11 @@ footer {
 .footer-misc-area {
   text-align: center;
   font-family: "open sans";
+  margin: 0px;
+}
+
+.footer-misc-area ol {
+  margin: 0px;
 }
 
 .footer-misc-area ol li {
@@ -230,6 +238,15 @@ footer {
 }
 
 /* */
+main {
+  height: 500px;
+}
+
+#placeholder-footer {
+  margin: 0px;
+  padding: 0px;
+}
+
 .page-front-image {
   width: 100%;
   height: 580px;
