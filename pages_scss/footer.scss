@@ -1,5 +1,99 @@
 /* footer Area */
 footer
 {
+    @extend %no-start-margin-and-padding;
+    grid-area: auto;   
+}
+
+.footer-page
+{
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-direction: row;
     
+    justify-content: space-around;
+
+}
+
+.footer-page-block
+{
+    font-family: 'open sans';
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    padding-top: 26px; 
+    padding-bottom: 26px; 
+    
+
+}
+
+.footer-page-block ol
+{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+   
+    text-decoration: none;
+    
+    font-family: 'open sans';
+
+    display: block;
+
+}
+
+.footer-page-block ol a
+{
+    color: gray;
+    text-decoration: none;
+    
+
+}
+
+.footer-page-block ol a li
+{
+    margin-bottom: 6px;
+    
+
+}
+
+//
+.footer-title
+{
+    font-weight: bold !important;
+    color: black !important;
+}
+
+.footer-title li 
+{
+    margin-bottom: 18px !important;
+}
+
+//
+.footer-misc-area
+{
+    text-align: center;
+    font-family: 'open sans';
+}
+
+.footer-misc-area ol
+{
+    
+}
+
+.footer-misc-area ol li
+{
+    list-style-type:none;
+    display: inline;
+    
+    font-size: 12px;
+}
+
+.footer-misc-area ol a
+{
+    
+    text-decoration: none;
+    color: gray;
 }
