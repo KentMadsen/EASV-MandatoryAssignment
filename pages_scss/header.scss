@@ -2,6 +2,13 @@
 header
 {
     @extend %no-start-margin-and-padding;
+    display: grid;
+    
+    grid-template-rows: auto;
+    grid-template-columns:100px auto 100px;
+
+    grid-gap: 16px;
+
     border-bottom: 1px solid gray;
 }
 
@@ -19,9 +26,8 @@ header
     list-style-type: none;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
-
 
 .menu a
 {
@@ -41,6 +47,37 @@ header
 {
     transition: $time;
     color:#e74c3c;
+}
+
+.menu-header-navigation-button
+{
+    color: #b2bec3;
+    font-size: 25px;
+    text-align: center;
+}
+
+.menu-nav-icon
+{
+    width: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header-nav-bar
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+.navigation-frame
+{
+
+}
+
+.menu-header-navigation-button:hover
+{
+    color:#2d3436;
 }
 
 /* Button Area */
