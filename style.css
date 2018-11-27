@@ -1,0 +1,165 @@
+/* Define Area */
+body {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 16px;
+}
+
+header {
+  grid-area: auto;
+}
+
+main {
+  grid-area: auto;
+}
+
+footer {
+  grid-area: auto;
+}
+
+.grid-container {
+  grid-area: auto;
+}
+
+body, .menu ol, header {
+  margin: 0px;
+}
+
+body, .menu ol, header {
+  padding: 0px;
+}
+
+/* Header Area */
+header {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100px auto 100px;
+  grid-gap: 16px;
+  border-bottom: 1px solid gray;
+}
+
+.menu ol {
+  float: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #b2bec3;
+  transition: 0.35s;
+}
+
+.menu a:hover {
+  transition: 0.35s;
+  color: #2d3436;
+}
+
+.menu a:active {
+  transition: 0.35s;
+  color: #e74c3c;
+}
+
+.menu-header-navigation-button {
+  color: #b2bec3;
+  font-size: 25px;
+  text-align: center;
+}
+
+.menu-nav-icon {
+  width: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header-nav-bar {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.menu-header-navigation-button:hover {
+  transition: 0.35s;
+  color: #2d3436;
+}
+
+/* Button Area */
+.button-container {
+  transition: 0.35s;
+  margin-left: 26px;
+  margin-right: 26px;
+  font-size: 14px;
+  font-family: "Assistant", "sans-serif";
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.button-container li {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0px;
+  transition: 0.35s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 2px solid #b2bec3;
+}
+
+.button-container li span {
+  grid-area: auto;
+}
+
+.button-container:hover li {
+  border: 2px solid #2d3436;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  transition: 0.35s;
+}
+
+.button-container:active li {
+  border: 2px solid #e74c3c;
+  transition: 0.35s;
+}
+
+.button-container li div {
+  display: block;
+}
+
+#menu-header-selected {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#menu-header-selected span {
+  display: block;
+}
+
+#menu-header-selected:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.frame {
+  text-align: center;
+}
+
+.frame-logo {
+  grid-area: auto;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.frame-descriptor {
+  margin-left: 6px;
+  margin-right: 12px;
+}
+
+/* footer Area */
+/* */
+
+/*# sourceMappingURL=style.css.map */
