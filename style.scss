@@ -25,22 +25,12 @@
 
 body
 {
-    background-color: #fbfbfb;
+    background-color: #eeeeee;
     
 }
 
-header
-{
-    background-color: white;
-}
-
-footer
-{
-    background-color: white;
-}
-
 // include
-@import './pages_scss/header.scss';
-@import './pages_scss/footer.scss';
+@import './scss/header.scss';
+@import './scss/footer.scss';
 
-@import './pages_scss/index.scss';
+@import './scss/index.scss';
