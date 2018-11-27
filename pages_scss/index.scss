@@ -3,4 +3,11 @@ body
 {
     @extend %no-start-margin-and-padding;
     
+    margin-top: 4px;
+}
+
+main
+{
+    
+    min-height: 100%;
 }
