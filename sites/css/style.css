@@ -6,15 +6,7 @@ body {
   grid-gap: 0px;
 }
 
-header {
-  grid-area: auto;
-}
-
 main {
-  grid-area: auto;
-}
-
-footer {
   grid-area: auto;
 }
 
@@ -22,16 +14,29 @@ footer {
   grid-area: auto;
 }
 
-body, .menu ol, header {
+body, footer, .menu ol, header {
   margin: 0px;
 }
 
-body, .menu ol, header {
+body, footer, .menu ol, header {
   padding: 0px;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+
+header {
+  background-color: white;
+}
+
+footer {
+  background-color: white;
 }
 
 /* Header Area */
 header {
+  grid-area: auto;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 100px auto 100px;
@@ -161,13 +166,80 @@ header {
 }
 
 /* footer Area */
-/* */
-body {
-  margin-top: 4px;
+footer {
+  grid-area: auto;
 }
 
-main {
-  min-height: 100%;
+.footer-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-page-block {
+  font-family: "open sans";
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.footer-page-block ol {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "open sans";
+  display: block;
+}
+
+.footer-page-block ol a {
+  color: gray;
+  text-decoration: none;
+}
+
+.footer-page-block ol a li {
+  margin-bottom: 6px;
+}
+
+.footer-title {
+  font-weight: bold !important;
+  color: black !important;
+}
+
+.footer-title li {
+  margin-bottom: 18px !important;
+}
+
+.footer-misc-area {
+  text-align: center;
+  font-family: "open sans";
+}
+
+.footer-misc-area ol li {
+  list-style-type: none;
+  display: inline;
+  font-size: 12px;
+}
+
+.footer-misc-area ol a {
+  text-decoration: none;
+  color: gray;
+}
+
+/* */
+.page-front-image {
+  width: 100%;
+  height: 580px;
+}
+
+.page-front-image img {
+  width: 100%;
+  height: 100%;
+  background-color: #2c3e50;
+  background-size: contain;
 }
 
 /*# sourceMappingURL=style.css.map */

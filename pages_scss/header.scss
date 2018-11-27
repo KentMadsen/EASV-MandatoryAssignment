@@ -1,6 +1,8 @@
 /* Header Area */
 header
 {
+    grid-area: auto;
+    
     @extend %no-start-margin-and-padding;
     display: grid;
     
