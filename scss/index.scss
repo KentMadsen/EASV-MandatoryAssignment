@@ -68,18 +68,67 @@ main
 
 .card
 {
+    
+    @extend %ignore-select;
+
     display: block;
 
     margin-top:8px;
     margin-bottom: 16px;
 
+
     width:30%;
-    height: 250px;
+    height: 280px;
 
     background-color: #fdfbfb;
 
     box-shadow: 4px 4px 8px rgba($color:black, $alpha: 0.025);
     border-radius: 8px;
+}
+
+.card:hover p
+{
+    display: block;
+}
+
+.card p 
+{
+    display: none;
+
+    font-family: 'Open sans';
+    text-align: center;
+    word-break: break-word;
+    text-transform: uppercase;
+}
+
+.card-title
+{
+    font-weight: bold;
+
+    color:#EA384D;
+    font-size: 20px;
+
+    margin: 0px;
+    margin-top: 16px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-description
+{
+    margin: 0px;
+    margin-top: 8px;
+    width: 80%;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.card:hover i 
+{
+    display: none;
 }
 
 .page_descriptor
@@ -123,7 +172,7 @@ main
 
 .card-logo i 
 {
-    margin-top: 52px;
+    margin-top: 68px;
     font-size: 128px;
 }
 
@@ -131,4 +180,33 @@ main
 {
     color: #e74c3c;
     transition: 2s;
+}
+
+.block-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 6px;
+    padding: 0px;
+    margin:0px;
+    margin-bottom: 32px;
+}
+
+.block
+{
+    grid-area: auto;
+    display: block;
+    margin:0;
+    padding: 0px;
+
+}
+
+.block img
+{
+    width: 100%;
+    height: auto;
+    margin:0;
+    padding: 0px;
+
 }
