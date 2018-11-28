@@ -84,10 +84,13 @@ footer
 //
 .footer-misc-area
 {
+@extend %ignore-select;
+
     text-align: center;
     font-family: 'open sans';
 
     border-top: 1px solid gray;
+    
 
     margin: 0px;
     padding-top: 5px;
