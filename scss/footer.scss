@@ -4,7 +4,9 @@ footer
     @extend %no-start-margin-and-padding;
     grid-area: auto;
 
-    border-top:1px solid gray;
+
+//    border-top-right-radius: 200px;
+//    border-top-left-radius: 200px;
 
     padding: 0px;
     margin: 0px;
@@ -12,12 +14,16 @@ footer
 
 .footer-page
 {
+    padding-top: 15px;
     display: flex;
 
     flex-wrap: wrap;
     flex-direction: row;
     
     justify-content: space-around;
+
+    
+    background-image: linear-gradient(to left bottom, #fdfbfb ,  #ebedee);
 
 }
 
@@ -78,10 +84,17 @@ footer
 //
 .footer-misc-area
 {
+@extend %ignore-select;
+
     text-align: center;
     font-family: 'open sans';
 
+    border-top: 1px solid gray;
+    
+
     margin: 0px;
+    padding-top: 5px;
+    padding-bottom:5px;
 }
 
 .footer-misc-area ol
