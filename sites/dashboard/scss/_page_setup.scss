@@ -308,14 +308,21 @@ h4
     font-size: 24px;
 }
 
+.border
+{
+    width: 95%;
+    margin-top: 16px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .song-individual
 {
     @extend %deselect;
 
     width: 100%;
 
-    border-top: 1px solid black;
-    
     border-bottom: 1px solid black;
 
 
