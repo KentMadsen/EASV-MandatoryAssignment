@@ -1,5 +1,7 @@
 body 
 {
+    @extend %page;
+    
     margin:0px;
     padding:0px;
 
@@ -12,7 +14,8 @@ body
 
 header
 {
-    font-family: $font-menu;
+    @extend %deselect;
+    @extend %menu;
     
     grid-area: auto;
     border-bottom:1px solid gray;
@@ -28,8 +31,41 @@ header
     padding-left:20px;
     padding-right: 20px;
 
-    text-transform: uppercase;
     margin-bottom: 16px;
+
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.125);
+}
+
+.play
+{
+    display: none;
+    
+}
+
+.playable-song
+{
+
+}
+
+.song-status
+{
+    width: 50px;
+    text-align: center;
+}
+
+.song-status i 
+{
+    margin-top: 4px;
+    font-size: 20px;
+    width: 100%;
+
+}
+
+.song-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 #header-logo
@@ -101,6 +137,9 @@ main
 
 footer
 {
+    @extend %deselect;
+    @extend %menu;
+
     grid-area: auto;
     border-top:1px solid gray;
     border-bottom:1px solid gray;
@@ -120,10 +159,15 @@ footer
 
 .misc-section
 {
+    @extend %deselect;
+    @extend %page;
+
     width: 100%;
     background-color: darkgray;
     color: white;
     text-align: center;
+
+    text-transform: uppercase;
 }
 
 .misc-section p 
@@ -232,4 +276,71 @@ footer
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 45px;
+}
+
+.song-list
+{
+    display: flex;
+    flex-direction: column;
+
+    padding:0px;
+    width: 100%;
+    margin: 0px;
+}
+
+.song-list li 
+{
+    display: block;
+    list-style-type: none;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    width: 100%;
+}
+
+h4 
+{
+    @extend %menu;
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 24px;
+}
+
+.song-individual
+{
+    @extend %deselect;
+
+    width: 100%;
+
+    border-top: 1px solid black;
+    
+    border-bottom: 1px solid black;
+
+
+    padding: 0px;
+    margin: 0px;    
+}
+
+.song-individual:hover .song-container .song-status .playable-song
+{
+    display: none;
+}
+
+.song-individual:hover .song-container .song-status .play
+{
+    display: block;
+}
+
+.album-alignment
+{
+    margin-left: 50px;
+}
+
+.song-individual li
+{
+    display: inline;
+    margin: 0px;
+    padding: 0px;
 }
