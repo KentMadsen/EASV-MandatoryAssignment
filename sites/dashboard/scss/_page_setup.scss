@@ -6,8 +6,8 @@ body
     display: grid;
 
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 16px;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 0px;
 }
 
 header
@@ -29,6 +29,7 @@ header
     padding-right: 20px;
 
     text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 #header-logo
@@ -94,12 +95,15 @@ main
     padding-left:20px;
     padding-right: 20px;
 
+    margin-bottom: 16px;
+
 };
 
 footer
 {
     grid-area: auto;
     border-top:1px solid gray;
+    border-bottom:1px solid gray;
 
     padding-top: 8px;
     padding-bottom: 8px;
@@ -113,6 +117,19 @@ footer
     grid-template-columns: 75px auto 75px;
     grid-gap: 16px;
 };
+
+.misc-section
+{
+    width: 100%;
+    background-color: darkgray;
+    color: white;
+    text-align: center;
+}
+
+.misc-section p 
+{
+    margin: 0px;
+}
 
 #player-menu-area
 {
@@ -194,7 +211,6 @@ footer
     height: 100%;
     width: 250px;
 }
-
 
 #current-position
 {
