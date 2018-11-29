@@ -130,12 +130,18 @@ footer {
   border-radius: 16px;
 }
 
+#progress {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 100%;
+  width: 250px;
+}
+
 #current-position {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
-  margin-left: 0%;
-  margin-right: auto;
+  float: right;
   width: 25px;
   height: 25px;
 }
