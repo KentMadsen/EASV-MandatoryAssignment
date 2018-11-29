@@ -9,7 +9,7 @@
   /* Standard syntax */
 }
 
-h4, footer, header {
+h1, h4, footer, header {
   font-family: "Quicksand";
   text-transform: uppercase;
 }
@@ -104,6 +104,7 @@ main {
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 16px;
+  min-height: 575px;
 }
 
 footer {
@@ -212,6 +213,9 @@ footer {
 .song-list {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   padding: 0px;
   width: 100%;
   margin: 0px;
@@ -260,6 +264,13 @@ h4 {
 .song-individual li {
   display: inline;
   margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 0px;
+  margin-left: 85px;
   padding: 0px;
 }
 

@@ -133,6 +133,7 @@ main
 
     margin-bottom: 16px;
 
+    min-height: 575px;
 };
 
 footer
@@ -283,6 +284,11 @@ footer
     display: flex;
     flex-direction: column;
 
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    
+
     padding:0px;
     width: 100%;
     margin: 0px;
@@ -350,4 +356,15 @@ h4
     display: inline;
     margin: 0px;
     padding: 0px;
+}
+
+h1
+{
+    @extend %menu;
+    font-size: 34px;
+
+    margin:0px;
+    margin-left: 85px;
+
+    padding:0px;
 }
