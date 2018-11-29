@@ -1,0 +1,260 @@
+.song-individual, .misc-section, footer, header {
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+}
+
+h4, footer, header {
+  font-family: "Quicksand";
+  text-transform: uppercase;
+}
+
+.misc-section, body {
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 0px;
+}
+
+header {
+  grid-area: auto;
+  border-bottom: 1px solid gray;
+  display: grid;
+  grid-template-columns: 175px 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 16px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.125);
+}
+
+.play {
+  display: none;
+}
+
+.song-status {
+  width: 50px;
+  text-align: center;
+}
+
+.song-status i {
+  margin-top: 4px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.song-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#header-logo a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#header-search a {
+  color: gray;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header-wrapper {
+  grid-area: auto;
+}
+
+.header-navigation {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header-navigation a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header-navigation a:hover {
+  color: black;
+}
+
+.header-navigation a li {
+  display: inline;
+}
+
+main {
+  grid-area: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 16px;
+}
+
+footer {
+  grid-area: auto;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 75px auto 75px;
+  grid-gap: 16px;
+}
+
+.misc-section {
+  width: 100%;
+  background-color: darkgray;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.misc-section p {
+  margin: 0px;
+}
+
+#player-menu-area {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 45px 45px;
+  grid-gap: 0px;
+}
+
+#player-menu-buttons {
+  grid-area: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  display: block;
+}
+
+#player-menu-bar {
+  grid-area: auto;
+}
+
+.space-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.jump-buttons {
+  margin-top: 20px;
+}
+
+#player-menu-bar-loader {
+  height: 25px;
+  width: 80%;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+}
+
+#progress {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 100%;
+  width: 250px;
+}
+
+#current-position {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  float: right;
+  width: 25px;
+  height: 25px;
+}
+
+.menu-button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 100%;
+  margin: 0px;
+}
+
+.song-list li {
+  display: block;
+  list-style-type: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+h4 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+}
+
+.song-individual {
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0px;
+  margin: 0px;
+}
+
+.song-individual:hover .song-container .song-status .playable-song {
+  display: none;
+}
+
+.song-individual:hover .song-container .song-status .play {
+  display: block;
+}
+
+.album-alignment {
+  margin-left: 50px;
+}
+
+.song-individual li {
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */
