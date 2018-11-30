@@ -33,7 +33,23 @@ header
 
     margin-bottom: 16px;
 
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.125);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.050);
+}
+
+.duration
+{
+    grid-area: auto;
+    font-size: 24px;
+    text-align: center;
+}
+
+.placement-container
+{
+    display: grid;
+    width: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: 50px 1fr 150px;
+    grid-gap: 0px;
 }
 
 .play
@@ -308,19 +324,28 @@ footer
 h4 
 {
     @extend %menu;
+
+    grid-area: auto;
     margin: 0px;
     padding: 0px;
 
     font-size: 24px;
+    
 }
 
 .border
 {
-    width: 95%;
+    width: 90%;
     margin-top: 16px;
 
     margin-left: auto;
     margin-right: auto;
+}
+
+.border a
+{
+    color: black;
+    text-decoration: none;
 }
 
 .song-individual
