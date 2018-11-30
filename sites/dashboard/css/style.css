@@ -9,7 +9,7 @@
   /* Standard syntax */
 }
 
-h4, footer, header {
+h1, h4, footer, header {
   font-family: "Quicksand";
   text-transform: uppercase;
 }
@@ -39,7 +39,21 @@ header {
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 16px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.125);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.duration {
+  grid-area: auto;
+  font-size: 24px;
+  text-align: center;
+}
+
+.placement-container {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: 50px 1fr 150px;
+  grid-gap: 0px;
 }
 
 .play {
@@ -104,6 +118,7 @@ main {
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 16px;
+  min-height: 575px;
 }
 
 footer {
@@ -212,6 +227,9 @@ footer {
 .song-list {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   padding: 0px;
   width: 100%;
   margin: 0px;
@@ -226,14 +244,26 @@ footer {
 }
 
 h4 {
+  grid-area: auto;
   margin: 0px;
   padding: 0px;
   font-size: 24px;
 }
 
+.border {
+  width: 90%;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border a {
+  color: black;
+  text-decoration: none;
+}
+
 .song-individual {
   width: 100%;
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 0px;
   margin: 0px;
@@ -254,6 +284,13 @@ h4 {
 .song-individual li {
   display: inline;
   margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 0px;
+  margin-left: 85px;
   padding: 0px;
 }
 

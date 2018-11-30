@@ -28,6 +28,8 @@
         <link rel="stylesheet" 
               href="./css/style.css">
 
+        <script src="./libs/jquery-3.3.1.min.js"></script>
+
     </head>
 
     <body>
@@ -98,38 +100,185 @@
         
         <!-- -->
         <main>
-            <ul class="song-list">
+            <h1>
+                Library
+            </h1>
+            <ul class="song-list" id="view">
                 <li>
-                    <ol class="song-individual">
-                        <div class="song-container">
-                            <div class="song-status">
-                                <div class="playable-song">
-                                        <i class="fas fa-music">
-                                        </i>
+                    <div class="border">
+                        <a href="#">
+                            <ol class="song-individual">
+                                <div class="song-container">
+                                    <div class="placement-container">
+                                            <div class="song-status">
+                                                    <div class="playable-song">
+                                                        <i class="fas fa-music">
+                                                        </i>
+                                                    </div>
+                                                    <div class="play">
+                                                        <i class="fas fa-play">
+                                                        </i>
+                                                    </div>
+                                            </div>
+                                            <h4 class="song-name">
+                                                Money, Money, Money 
+                                            </h4>
+                                            <span class="duration">
+                                                    3.06m.
+                                            </span>
+                                    </div>
                                 </div>
-
-                                <div class="play">
-                                        <i class="fas fa-play">
-                                        </i>
-                                </div>
-                            </div>
-
-                            <h4 class="song-name">
-                                Money, Money, Money
-                            </h4>
-                        </div>
-
-                        <span class="album-alignment">
-                            <li class="album-name">ABBA Gold</li>
-                            <li class="album-release">1976</li>
-                            <li class="album-genre">Pop</li>
-                            <li class="album-singer">ABBA</li>
-                        </span>
-                    </ol>
+                                <span class="album-alignment">
+                                    <li class="album-name">
+                                        ABBA Gold
+                                    </li>
+                                    <li class="album-release">
+                                        1976
+                                    </li>
+                                    <li class="album-genre">
+                                        Pop
+                                    </li>
+                                    <li class="album-singer">
+                                        ABBA
+                                    </li>
+                                </span>
+                            </ol>
+                        </a>
+                    </div>
                 </li>
 
-                    
-                 
+                <!-- Delete -->
+
+                <li>
+                        <div class="border">
+                            <a href="#">
+                                <ol class="song-individual">
+                                    <div class="song-container">
+                                        <div class="placement-container">
+                                                <div class="song-status">
+                                                        <div class="playable-song">
+                                                            <i class="fas fa-music">
+                                                            </i>
+                                                        </div>
+                                                        <div class="play">
+                                                            <i class="fas fa-play">
+                                                            </i>
+                                                        </div>
+                                                </div>
+                                                <h4 class="song-name">
+                                                    Money, Money, Money 
+                                                </h4>
+                                                <span class="duration">
+                                                        3.06m.
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <span class="album-alignment">
+                                        <li class="album-name">
+                                            ABBA Gold
+                                        </li>
+                                        <li class="album-release">
+                                            1976
+                                        </li>
+                                        <li class="album-genre">
+                                            Pop
+                                        </li>
+                                        <li class="album-singer">
+                                            ABBA
+                                        </li>
+                                    </span>
+                                </ol>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                            <div class="border">
+                                <a href="#">
+                                    <ol class="song-individual">
+                                        <div class="song-container">
+                                            <div class="placement-container">
+                                                    <div class="song-status">
+                                                            <div class="playable-song">
+                                                                <i class="fas fa-music">
+                                                                </i>
+                                                            </div>
+                                                            <div class="play">
+                                                                <i class="fas fa-play">
+                                                                </i>
+                                                            </div>
+                                                    </div>
+                                                    <h4 class="song-name">
+                                                        Money, Money, Money 
+                                                    </h4>
+                                                    <span class="duration">
+                                                            3.06m.
+                                                    </span>
+                                            </div>
+                                        </div>
+                                        <span class="album-alignment">
+                                            <li class="album-name">
+                                                ABBA Gold
+                                            </li>
+                                            <li class="album-release">
+                                                1976
+                                            </li>
+                                            <li class="album-genre">
+                                                Pop
+                                            </li>
+                                            <li class="album-singer">
+                                                ABBA
+                                            </li>
+                                        </span>
+                                    </ol>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                                <div class="border">
+                                    <a href="#">
+                                        <ol class="song-individual">
+                                            <div class="song-container">
+                                                <div class="placement-container">
+                                                        <div class="song-status">
+                                                                <div class="playable-song">
+                                                                    <i class="fas fa-music">
+                                                                    </i>
+                                                                </div>
+                                                                <div class="play">
+                                                                    <i class="fas fa-play">
+                                                                    </i>
+                                                                </div>
+                                                        </div>
+                                                        <h4 class="song-name">
+                                                            Money, Money, Money 
+                                                        </h4>
+                                                        <span class="duration">
+                                                                3.06m.
+                                                        </span>
+                                                </div>
+                                            </div>
+                                            <span class="album-alignment">
+                                                <li class="album-name">
+                                                    ABBA Gold
+                                                </li>
+                                                <li class="album-release">
+                                                    1976
+                                                </li>
+                                                <li class="album-genre">
+                                                    Pop
+                                                </li>
+                                                <li class="album-singer">
+                                                    ABBA
+                                                </li>
+                                            </span>
+                                        </ol>
+                                    </a>
+                                </div>
+                            </li>
+
+                <!-- Delete -->
             </ul>
         </main>
 
@@ -209,5 +358,12 @@
                     Copyright 2018 Kent Madsen
                 </p>
         </section>
+
+        
+        <script src="./scripts/music.js">
+        </script>
+
+        <script src="./scripts/test.js" onload="test();">
+        </script>
     </body>
 </html>
