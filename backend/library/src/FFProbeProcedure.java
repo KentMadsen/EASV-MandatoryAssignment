@@ -1,18 +1,28 @@
 public class FFProbeProcedure
 {
-
+    // Constructpr
+    /**
+     *
+     * @param path
+     */
     public FFProbeProcedure( String path )
     {
         this.setFilePath( path );
     }
 
 
+    // Variables
     /**
      *
      */
     private FFProbeBatch[] batches = null;
+
+    /**
+     *
+     */
     private String filePath = null;
 
+    // Accessor
     /**
      *
      * @return
@@ -49,6 +59,7 @@ public class FFProbeProcedure
         this.filePath = filePath;
     }
 
+    // Object Implementation
     /**
      *
      * @return

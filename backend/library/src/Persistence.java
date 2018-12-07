@@ -1,3 +1,4 @@
-public class Persistence
+public abstract class Persistence
 {
+
 }

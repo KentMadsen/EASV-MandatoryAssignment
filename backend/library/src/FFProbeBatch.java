@@ -1,16 +1,27 @@
 public class FFProbeBatch
 {
+    /**
+     *
+     */
     public FFProbeBatch()
     {
         this("-print_format json -show_format -show_streams");
-
     }
 
+    /**
+     *
+     * @param args
+     */
     public FFProbeBatch( String args )
     {
         this.setArgs( args );
     }
 
+    /**
+     *
+     * @param args
+     * @param fromLocation
+     */
     public FFProbeBatch( String args,
                          String fromLocation )
     {
